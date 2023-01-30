@@ -1,2 +1,2 @@
 # website-staging
-a Pages site for the Website staging environment 
+a GH Pages site for the Website staging environment 
