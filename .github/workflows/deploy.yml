@@ -12,7 +12,8 @@ jobs:
       - name: What is in the working dir
         run: |
           pwd 
-          ls
+          cd _site
+          ls -lah
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v1
       - name: Deploy to GitHub Pages
