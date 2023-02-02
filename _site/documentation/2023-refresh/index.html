@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMyydhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsyhsyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMhhNMNdhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdshNMmsyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhshNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhydNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhydNNdyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmNNmhhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyydNNdyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyymMNhyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmyymMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMNhhmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyymMmhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMNdhmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyhNMmyydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMNhyhNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMNhydNNmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhhmMNdhdNMMMMMMMMMMMMMMMMmhydNNdyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmNNmhdNMMMMMMMMMMMMmhydNNdyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMmyymMNhyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMNmyymMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMmhhmmyhmMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhdNMNhyhNNhydMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdyhNMNdyydMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm+.dmhhmMNdysyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMo-  -Mdyhhhmh+yddNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd/   .shNMMd/ommhommMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNddmmh- -mMMMMMMNdmh/:-hMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhysoooosdmNNmhdNMMMMMMMMMMMMhy-/o+ssoooosyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho//////:/.-ymds::NMMMMMMMMMMMMMMMh+o+o+/+//////+sdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNy+///////+yo.:`:/:hMMMMMMMMMMMMMMMMMMdy+o+o+yo///////omMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNo///////+h+-+s/-mNMMMMMMMMMMMMMMMMMMMMMMs++yddyo///////+hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN+/////////-/so//oMMMMMMMMMMMMMMMMMMMMMMMMd//osyhy/////////hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy///////////+///+NMMMMMMMMMMMMMMMMMMMMMMMMMy////++/////////+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+//////////////sNMMMMMMMMMMMMMMMMMMMMMMMMMMMh+//////////////dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+////////////odMMMMMMMMMMddMMMMMMNhNMMMMMMMMMmy+////////////dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy///////+oshmMMMMMMMMmmmh..dmmmmmo.+mmmNMMMMMMMNdyo+///////+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs////oshmMMMMMMMMMMM+/////////////////yMMMMMMMMMMNdyo+///+mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh+/////+smNNNNNNNNN//////.`````-/////yNNNNNNNNNho+/////smMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho+////osssssssso///////-..-://////+sssssssso+////+smMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmdhhdyoooshyso+//////////////////+oosdsoooodhhdmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNsoohNNyoo///sddds///dddd///+oomNNsoodMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyosssooo///yMMMy///NMMN///+oosssoodMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsooooo///yMMMy///NMMN///+oooooymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdsooo///yMMMy///NMMN///+oooymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhoo+//yMMMy///NMMN///+osdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdo//smmo/yMMMy///NMMN/+yNh+/+yNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs//odMMMNyyMMMy///NMMN+dMMMNy+/+dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh//hMMMMmssdmNMy///NMmmhshMMMMNo/+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs/oMMMMM++NMMmmy///mmNMMh/hMMMMd//NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNomMMMMMyyMMMMMdo+yNMMMMNomMMMMMshMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+Meet Mollie the crab, our unofficial mascot :)
+-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+
+
+
+    <title>United States Digital Service</title>
+
+    
+
+    <meta name="description" content="This page will serve as the central collab and notes area for this effort. What is our goal with this effort? Improve current site Achieve WCAG AA accessibility rating Fix..." />
+    <link rel="canonical" href="https://usds.gov/documentation/2023-refresh/" />
+    <meta property="og:title" content="United States Digital Service" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="This page will serve as the central collab and notes area for this effort. What is our goal with this effort? Improve current site Achieve WCAG AA accessibility rating Fix..." />
+    <meta property="og:url" content="https://usds.gov/documentation/2023-refresh/" />
+    <meta property="og:site_name" content="United States Digital Service" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://usds.gov/assets/img/social-card--default.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@usds" />
+    <meta name="twitter:image" content="https://usds.gov/assets/img/social-card--default.png">
+    <script type="application/ld+json">
+    {"description":"This page will serve as the central collab and notes area for this effort. What is our goal with this effort? Improve current site Achieve WCAG AA accessibility rating Fix...","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/img/usds-logo-onwhite.png"}},"headline":"United States Digital Service","dateModified":"2023-02-02 13:13:29 -0500","datePublished":"2023-02-02 13:13:29 -0500","mainEntityOfPage":{"@type":"WebPage","@id":"https://usds.gov/documentation/2023-refresh/"},"@context":"http://schema.org"}</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" media="all" href="/assets/stylesheets/styles.css"></link>
+    <link rel="alternate" type="application/rss+xml" title="United States Digital Service" href="/feed.xml">
+
+    
+
+    <script type="application/javascript" src="/assets/js/vendor/uswds-init.min.js"></script>
+
+    
+      <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
+      <script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=EOP&amp;sub-agency=USDS" id="_fed_an_ua_tag"></script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132706295-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-132706295-1', { 'anonymize_ip': true });
+      </script>
+    
+
+</head>
+
+
+<body>
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  <div class="usa-banner padding-bottom-2 tablet:padding-bottom-0">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner maxw-none">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-dot-gov.svg" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>The .gov means it’s official.</strong>
+              <br>
+              Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-https.svg" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>The site is secure.</strong>
+              <br>
+              The <strong>https://</strong> ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<header class="usa-header site-c-header" role="banner">
+  <div class="usa-navbar site-c-navbar">
+    <a href="/" title="USDS Home" class="site-c-navbar__logo-link">
+      <img class="site-c-navbar__logo" src="/assets/img/usds-logo-horizontal.png" alt="USDS Logo">
+    </a>
+    <a href="/apply" class="usa-button site-c-navbar__join">Apply</a>
+    <button class="usa-menu-btn site-c-navbar__button" aria-label="Menu">
+      <svg aria-hidden="true">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#bars"></use>
+      </svg>
+    </button>
+  </div>
+
+  <nav role="navigation" class="usa-nav site-c-nav">
+      <button class="usa-nav__close">
+        <img src="/assets/img/close.svg" alt="close">
+      </button>
+
+      <ul class="site-c-nav__primary-nav">
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/mission">Our mission</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/how-we-work">How we work</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/projects">Projects</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/news-and-blog">News &amp; blog</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--mobile">
+          <a class="site-c-nav__primary-nav__link" href="/apply">Apply now</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--non-mobile">
+          <a href="/apply" class="usa-button">Apply now</a>
+        </li>
+      </ul>
+
+  </nav>
+</header>
+<div class="usa-overlay"></div>
+
+
+  
+
+  <main id="main-content" role="main" class="margin-bottom-9">
+
+    
+      <p>This page will serve as the central collab and notes area for this effort.</p>
+
+<h1 id="what-is-our-goal-with-this-effort">What is our goal with this effort?</h1>
+
+<h2 id="improve-current-site">Improve current site</h2>
+<ol>
+  <li>Achieve WCAG AA accessibility rating</li>
+  <li>Fix staging site deployment</li>
+  <li>Fix tech debt</li>
+</ol>
+
+<p>Bonus</p>
+<ul>
+  <li>Upgrade underlying tech from Jekyll to Gatsby to reuse existing static site code</li>
+</ul>
+
+<h2 id="discovery-sprint">Discovery sprint</h2>
+<p>Answer a specific question that will help the website thrive over the long term.</p>
+
+<h3 id="steps">Steps</h3>
+<ol>
+  <li>Understand pain points and team priorities (initially done at kickoff)</li>
+  <li>Very specific question to answer</li>
+  <li>Have a hypothesis</li>
+  <li>Decide how to staff</li>
+  <li>Create a research plan with a timeline
+    <ul>
+      <li>Target research participants</li>
+      <li>Research question(s)</li>
+      <li>Desired outcomes</li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="resources-directly-related-to-our-work">Resources directly related to our work</h1>
+<p><strong>Slack channel</strong>: #website-refresh-fall22</p>
+
+<h2 id="mural-board">Mural board</h2>
+<p>https://app.mural.co/t/usdigitalservice0135/m/usdigitalservice0135/1672774407639/cfa0ba36ef019a28c549bd98f3fd02dfcd485b71?sender=cf733c6d-cca3-4a00-919f-561716f98b23</p>
+
+<h2 id="project-board">Project board</h2>
+<p>https://github.com/orgs/usds/projects/77/views/1</p>
+
+<h1 id="what-is-our-process-for-taking-in-and-prioritizing-work">What is our process for taking in and prioritizing work?</h1>
+
+<h2 id="research-opportunities">Research opportunities</h2>
+<ul>
+  <li>Usability for comms team + recommendations for how to build something that will work for them within our tooling constraints</li>
+  <li>What sort of content strategy would be most effective to recruit great talent?</li>
+</ul>
+
+<h1 id="work-that-could-go-into-this-effort">Work that could go into this effort</h1>
+<h2 id="feature-requests-from-comms">Feature requests from comms</h2>
+<h3 id="priority-a-improving-accessibility">Priority A: Improving accessibility</h3>
+<p>Running list of things we should ideally improve, flagged by Martha W.</p>
+
+<h4 id="design--engineering">Design + engineering</h4>
+<ul>
+  <li>add alt tags to all images</li>
+  <li>make any PDFs into static webpages instead (D&amp;I report, Impact Report, one-sheet) - you could keep the option to download the PDF but yes, bring the content into HTML</li>
+  <li>double-check the carousels for a11y if you intend to keep them, I cannot tab to them so I’m not altogether sure they are compliant</li>
+</ul>
+
+<h4 id="comms--content">Comms + content</h4>
+<ul>
+  <li>be explicit that we want disabled folks to apply, make them feel welcomed</li>
+  <li>add detailed info about the interview process and what accommodations are available, make it very easy to find this info up-front</li>
+  <li>add info about how medical insurance works, this is a huge issue for disabled folks and is a determining factor for even considering to apply</li>
+  <li>add info about remote work, this is a huge issue for disabled folks who may need to work from home</li>
+</ul>
+
+<h3 id="priority-b-general-site-improvements">Priority B: General site improvements</h3>
+<ol>
+  <li>Navigation
+    <ul>
+      <li>How do we refine top nav/IA?</li>
+    </ul>
+  </li>
+  <li>Footer
+    <ul>
+      <li>Based on analytics, what do people engage with in the footer menu?</li>
+      <li>How do we optimize footer content?</li>
+      <li>Update the social media icons (Alison can replace these)</li>
+    </ul>
+  </li>
+  <li>CTA
+    <ul>
+      <li>Main CTA is currently driving users to Apply</li>
+      <li>Possibility of adding a secondary CTA? Perhaps a “Learn More” sign up page to capture contact info/newsletter sign up</li>
+    </ul>
+  </li>
+  <li>Homepage
+    <ul>
+      <li>current hero image gives the impression that we are still in the pre-covid times</li>
+      <li>How do we showcase our hybrid model right now?</li>
+      <li>Do we add an image slider to showcase a series of photos that relate to 6 USDS values?</li>
+    </ul>
+  </li>
+  <li>People page
+    <ul>
+      <li>Add leadership profiles with the same questionnaire</li>
+      <li>Ability to view leadership team</li>
+      <li>Can we have additional categories to the top of people profiles? ie filter people profiles by COP</li>
+    </ul>
+  </li>
+  <li>Our Mission Page
+    <ul>
+      <li>USDS Origin Story: revised layout perhaps to a timeline concept</li>
+      <li>Use more visuals to illustrate who we were and where we are</li>
+    </ul>
+  </li>
+  <li>Projects page
+    <ul>
+      <li>Functionality of the projects listed is fine, however we are open to  to new functionality and layout. Do we show a broader project overview instead of the card style layout?</li>
+      <li>Can we add subhead style to project pages?</li>
+    </ul>
+  </li>
+  <li>Press/USDS in the News
+    <ul>
+      <li>Should logos be in full color or move to featuring headlines instead of logos?
+        <h4 id="general-questions">General questions</h4>
+      </li>
+      <li>Can we embed video?</li>
+      <li>What is the long game for <a href="http://usds.gov/">USDS.gov</a> maintenance plan support from engineering/design?</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="work-discovered-during-discovery-process">Work discovered during discovery process</h2>
+<ul>
+  <li>Rewrite site in something more maintainable
+    <blockquote>
+      <ul>
+        <li>Establish a standard for rolling out small static sites and then use it</li>
+        <li>Explore <a href="https://github.com/usds/techfar-hub-website-v3">techfar hub</a> and j40 to see what’s reusable</li>
+      </ul>
+    </blockquote>
+  </li>
+  <li>Upgrade USWDS from 2.x.x to 3.x.x</li>
+  <li>Document workflows</li>
+  <li>Upgrade documentation for:
+    <ul>
+      <li>Engineers</li>
+      <li>Content creators</li>
+    </ul>
+  </li>
+  <li>Uptime monitoring for both usds.gov and usds.gov/apply (salesforce iframe)</li>
+  <li>How to handle downtime for salesforce (see: Lisa having to put a notice up and remove the iframe manually)</li>
+  <li>gh is not a cms, it’s a public repo. Do we want staging deployments and branches being publicly accessible?
+    <ul>
+      <li>check out <code class="language-plaintext highlighter-rouge">c19-state-report</code> repo</li>
+      <li>If it’s public, are there ways to hide secrets? are there secrets to hide?</li>
+    </ul>
+  </li>
+  <li>Make cloud.gov staging site deploy work</li>
+  <li>Document and verify workflow</li>
+  <li>If not upgrade, tend to install and dependency management in this version so installation works better for everyone
+    <ul>
+      <li>Containerize so it can just run in Docker and not deal with local stuff</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="limiters">Limiters</h1>
+<ul>
+  <li>Tooling. What are we able to use? What has an ATO? What should have an ATO soon?</li>
+  <li>Willingness to create something more usable</li>
+</ul>
+
+<h1 id="meeting-notes">Meeting Notes</h1>
+<h2 id="dec-2022">Dec 2022</h2>
+<ul>
+  <li>Introduction (12/16)
+    <h1 id="resources">Resources</h1>
+    <p>Slack channel: #website-refresh-fall22</p>
+  </li>
+  <li><a href="https://usds.slack.com/archives/CEU5XJYTH/p1664900418642209">Incoming post</a></li>
+  <li><a href="https://github.com/orgs/usds/projects/40/views/8?filterQuery=is%3Aopen+usds.gov">Archive of comms feature requests</a></li>
+  <li>Landscape analysis and content brainstorming <a href="https://app.mural.co/t/dhsds5073/m/dhsds5073/1674055489260/648f61f81b1ea8ed9e799820ff114498387fa987?sender=allycemoncton7287">Mural</a>.</li>
+</ul>
+
+    
+
+  </main>
+
+  
+
+<div>
+<ul id="instagram-feed" class="site-c-instagallery"></ul>
+</div>
+
+<section class="site-c-billboard">
+  <div class="grid-container">
+    <p>We need you.</p>
+    <p>Let’s help millions of people together.</p>
+    <p><a class="usa-button usa-button--outline usa-button--inverse" href="/apply">Apply now</a></p>
+  </div>
+</section>
+
+
+<footer class="site-c-footer">
+  <div class="grid-container">
+    <div class="grid-row flex-justify">
+      <div class="grid-col-12 desktop:grid-col margin-bottom-7">
+        <img class="site-c-footer__logo" src="/assets/img/usds-logo-footer.svg" alt="USDS Logo">
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">About USDS</h2>
+        <ul class="site-c-footer__list tablet:padding-right-3">
+          <li><a href="/contact-us">Contact us</a></li>
+          <li><a href="/assets/files/usds-di.pdf" target="_blank">Diversity &amp; Inclusion Report</a></li>
+          <li><a href="/resources/USDS-Impact-Report-2020.pdf" target="_blank">Impact Report</a></li>
+          <li><a href="/assets/files/USDS-Overview.pdf" target="_blank">Press sheet</a></li>
+          <li><a href="/faq">Hiring FAQ</a></li>
+        </ul>
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">Resources</h2>
+        <ul class="site-c-footer__list tablet:padding-right-3">
+          <li><a href="https://playbook.cio.gov/" target="_blank">Digital Services Playbook</a></li>
+          <li><a href="https://sprint.usds.gov/" target="_blank">Discovery Sprint Guide</a></li>
+          <li><a href="https://techfarhub.cio.gov/" target="_blank">TechFAR Hub</a></li>
+          <li><a href="https://designsystem.digital.gov/" target="_blank">U.S. Web Design System</a></li>
+        </ul>
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">Follow us</h2>
+        <ul class="site-c-social-buttons site-c-social-buttons--mini ">
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.instagram.com/usdigitalservice" class="site-c-social-buttons__link site-c-social-buttons__link--instagram" title="Instagram" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#instagram"></use>
+      </svg>
+      <span class="usa-sr-only">Instagram</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://twitter.com/USDS" class="site-c-social-buttons__link site-c-social-buttons__link--twitter" title="Twitter" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#twitter"></use>
+      </svg>
+      <span class="usa-sr-only">Twitter</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.facebook.com/unitedstatesdigitalservice" class="site-c-social-buttons__link site-c-social-buttons__link--facebook" title="Facebook" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#facebook-f"></use>
+      </svg>
+      <span class="usa-sr-only">Facebook</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://medium.com/@USDigitalService" class="site-c-social-buttons__link site-c-social-buttons__link--medium" title="Medium" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#medium-m"></use>
+      </svg>
+      <span class="usa-sr-only">Medium</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.linkedin.com/company/united-states-digital-service" class="site-c-social-buttons__link site-c-social-buttons__link--linkedin" title="Linked in" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#linkedin-in"></use>
+      </svg>
+      <span class="usa-sr-only">Linked in</span>
+    </a>
+  </li>
+  
+</ul>
+      </div>
+    </div>
+    <div class="site-c-footer__site-info">
+      <a href="mailto:USDSpress@omb.eop.gov">USDSpress@omb.eop.gov</a> | <a href="/privacy">Privacy policy</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+
+  <script src="/assets/js/application.js"></script>
+  <script src="/assets/js/vendor/uswds.min.js"></script>
+  <script src="/assets/js/shims/svg4everybody.js"></script>
+  <script>svg4everybody();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMyydhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsyhsyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMhhNMNdhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdshNMmsyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhshNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhydNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhydNNdyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmNNmhhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyydNNdyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyymMNhyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmyymMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMNhhmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyymMmhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMNdhmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyhNMmyydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMNhyhNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMNhydNNmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhhmMNdhdNMMMMMMMMMMMMMMMMmhydNNdyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmNNmhdNMMMMMMMMMMMMmhydNNdyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMmyymMNhyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMNmyymMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMmhhmmyhmMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhdNMNhyhNNhydMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdyhNMNdyydMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm+.dmhhmMNdysyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMo-  -Mdyhhhmh+yddNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd/   .shNMMd/ommhommMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNddmmh- -mMMMMMMNdmh/:-hMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhysoooosdmNNmhdNMMMMMMMMMMMMhy-/o+ssoooosyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho//////:/.-ymds::NMMMMMMMMMMMMMMMh+o+o+/+//////+sdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNy+///////+yo.:`:/:hMMMMMMMMMMMMMMMMMMdy+o+o+yo///////omMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNo///////+h+-+s/-mNMMMMMMMMMMMMMMMMMMMMMMs++yddyo///////+hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN+/////////-/so//oMMMMMMMMMMMMMMMMMMMMMMMMd//osyhy/////////hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy///////////+///+NMMMMMMMMMMMMMMMMMMMMMMMMMy////++/////////+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+//////////////sNMMMMMMMMMMMMMMMMMMMMMMMMMMMh+//////////////dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+////////////odMMMMMMMMMMddMMMMMMNhNMMMMMMMMMmy+////////////dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy///////+oshmMMMMMMMMmmmh..dmmmmmo.+mmmNMMMMMMMNdyo+///////+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs////oshmMMMMMMMMMMM+/////////////////yMMMMMMMMMMNdyo+///+mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh+/////+smNNNNNNNNN//////.`````-/////yNNNNNNNNNho+/////smMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho+////osssssssso///////-..-://////+sssssssso+////+smMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmdhhdyoooshyso+//////////////////+oosdsoooodhhdmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNsoohNNyoo///sddds///dddd///+oomNNsoodMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyosssooo///yMMMy///NMMN///+oosssoodMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsooooo///yMMMy///NMMN///+oooooymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdsooo///yMMMy///NMMN///+oooymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhoo+//yMMMy///NMMN///+osdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdo//smmo/yMMMy///NMMN/+yNh+/+yNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs//odMMMNyyMMMy///NMMN+dMMMNy+/+dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh//hMMMMmssdmNMy///NMmmhshMMMMNo/+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs/oMMMMM++NMMmmy///mmNMMh/hMMMMd//NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNomMMMMMyyMMMMMdo+yNMMMMNomMMMMMshMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+Meet Mollie the crab, our unofficial mascot :)
+-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+
+
+
+    <title>Modernizing the Immigration System at DHS | United States Digital Service</title>
+
+    
+
+    <meta name="description" content="The Challenge Every year, the Department of Homeland Security’s U.S. Citizenship and Immigration Services (USCIS) processes millions of immigration requests. This system is mostly paper-based, consists of multiple forms, and..." />
+    <link rel="canonical" href="https://usds.gov/report-to-congress/2016/immigration-system/" />
+    <meta property="og:title" content="Modernizing the Immigration System at DHS | United States Digital Service" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="The Challenge Every year, the Department of Homeland Security’s U.S. Citizenship and Immigration Services (USCIS) processes millions of immigration requests. This system is mostly paper-based, consists of multiple forms, and..." />
+    <meta property="og:url" content="https://usds.gov/report-to-congress/2016/immigration-system/" />
+    <meta property="og:site_name" content="United States Digital Service" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://usds.gov/assets/img/social-card--default.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@usds" />
+    <meta name="twitter:image" content="https://usds.gov/assets/img/social-card--default.png">
+    <script type="application/ld+json">
+    {"description":"The Challenge Every year, the Department of Homeland Security’s U.S. Citizenship and Immigration Services (USCIS) processes millions of immigration requests. This system is mostly paper-based, consists of multiple forms, and...","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/img/usds-logo-onwhite.png"}},"headline":"Modernizing the Immigration System at DHS | United States Digital Service","dateModified":"2023-02-02 13:13:29 -0500","datePublished":"2023-02-02 13:13:29 -0500","mainEntityOfPage":{"@type":"WebPage","@id":"https://usds.gov/report-to-congress/2016/immigration-system/"},"@context":"http://schema.org"}</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" media="all" href="/assets/stylesheets/styles.css"></link>
+    <link rel="alternate" type="application/rss+xml" title="United States Digital Service" href="/feed.xml">
+
+    
+
+    <script type="application/javascript" src="/assets/js/vendor/uswds-init.min.js"></script>
+
+    
+      <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
+      <script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=EOP&amp;sub-agency=USDS" id="_fed_an_ua_tag"></script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132706295-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-132706295-1', { 'anonymize_ip': true });
+      </script>
+    
+
+</head>
+
+
+<body>
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  <div class="usa-banner padding-bottom-2 tablet:padding-bottom-0">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner maxw-none">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-dot-gov.svg" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>The .gov means it’s official.</strong>
+              <br>
+              Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-https.svg" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>The site is secure.</strong>
+              <br>
+              The <strong>https://</strong> ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<header class="usa-header site-c-header" role="banner">
+  <div class="usa-navbar site-c-navbar">
+    <a href="/" title="USDS Home" class="site-c-navbar__logo-link">
+      <img class="site-c-navbar__logo" src="/assets/img/usds-logo-horizontal.png" alt="USDS Logo">
+    </a>
+    <a href="/apply" class="usa-button site-c-navbar__join">Apply</a>
+    <button class="usa-menu-btn site-c-navbar__button" aria-label="Menu">
+      <svg aria-hidden="true">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#bars"></use>
+      </svg>
+    </button>
+  </div>
+
+  <nav role="navigation" class="usa-nav site-c-nav">
+      <button class="usa-nav__close">
+        <img src="/assets/img/close.svg" alt="close">
+      </button>
+
+      <ul class="site-c-nav__primary-nav">
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/mission">Our mission</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/how-we-work">How we work</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/projects">Projects</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/news-and-blog">News &amp; blog</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--mobile">
+          <a class="site-c-nav__primary-nav__link" href="/apply">Apply now</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--non-mobile">
+          <a href="/apply" class="usa-button">Apply now</a>
+        </li>
+      </ul>
+
+  </nav>
+</header>
+<div class="usa-overlay"></div>
+
+
+  
+
+  <main id="main-content" role="main" class="margin-bottom-9">
+
+    
+      <style>
+.site-c-flag a:visited,
+.site-c-report-to-congress ul a:visited {
+  color: #005ea2;
+}
+.site-c-report-to-congress ul,
+.site-c-report-to-congress ol {
+  max-width: 66ch;
+}
+.site-c-report-to-congress.side-nav ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+.site-c-report-to-congress.side-nav li {
+  margin: 1rem 0;
+}
+.site-c-report-to-congress.side-nav li.sub {
+  margin-left: 2rem;
+}
+.site-c-report-to-congress.side-nav li.active {
+  font-weight: bold;
+}
+.site-c-report-to-congress.side-nav li.pdf {
+  margin: 3rem 0;
+}
+</style>
+
+<div class="grid-container">
+  <header class="padding-y-5">
+
+    <span class="site-c-flag">
+      
+        
+        <a href="/report-to-congress/2016/">2016 Report to Congress</a>
+        
+      
+       </span>
+    <h1>Modernizing the Immigration System at DHS</h1>
+  </header>
+  <hr>
+
+  <div class="grid-row tablet:flex-row padding-top-3">
+    <div class="tablet:grid-col-8 desktop:grid-col-9 margin-bottom-9 tablet:padding-right-4 site-c-report-to-congress">
+      <h3 id="the-challenge">The Challenge</h3>
+
+<p>Every year, the Department of Homeland Security’s U.S. Citizenship and Immigration Services (USCIS) processes millions of immigration requests. This system is mostly paper-based, consists of multiple forms, and results in long waiting periods for applicants who have little visibility into the status of their applications.</p>
+
+<p>USCIS wanted to modernize the process. They wanted a streamlined experience that would allow applicants to identify which form was meant for their specific situation, and enable adjudicators to process applications more efficiently and effectively than on paper.</p>
+
+<p>To achieve this goal, USCIS began a five-year engagement with a technology vendor to create the Electronic Immigration System (ELIS). The project ran into a host of issues: the project scope was too large, the proprietary technology adopted was too complex and inflexible, and releases happened years after the project began. The agency was heavily reliant on specific vendors and proprietary technologies that proved costly and difficult to customize to address USCIS’ product requirements.</p>
+
+<p>ELIS fell short of expectations and didn’t meet user needs – so USCIS made the hard but correct decision to restart the project using a new management style and a new technical approach that took key plays from private industry.</p>
+
+<p>In 2014, members of the USDS joined the USCIS team to help the agency implement these changes, and the USDS has provided ongoing support to the agency since then.</p>
+
+<h3 id="project-impact-summary">Project Impact Summary</h3>
+
+<ul>
+  <li>Every year, USCIS processes millions of immigration requests. Its multi-year project to modernize this process (the ELIS project) ran into a host of issues common in Federal Government IT projects, leading USCIS to restart the project.</li>
+  <li>In 2014, USDS staff engineers, designers and product managers began working with USCIS to help it implement private sector IT management best practices including agile software development and continuous integration.</li>
+  <li>In March 2015, following a November 2014 soft launch, USDS supported USCIS with the release of online filing and adjudication of the Form I-90, the application to replace permanent resident cards. 92% of online I-90 filers (renewing or replacing their green cards) reported being satisfied with the experience.</li>
+  <li>In February 2015, USCIS partnered with 18F, private contractors, and USDS to launch myUSCIS, a new service to help applications and their representatives better navigate the immigration process.</li>
+  <li>The Immigrant Fee payment launched in August 2015, enabling over 1.1 million applicants to make fee payments digitally.</li>
+  <li>USCIS has adopted deployment approaches that allow it to release improvements to ELIS weekly, compared to the quarterly release schedule the project followed previously.</li>
+  <li>Today, 25% of immigration applications are processed electronically and USDS continues to work with USCIS to increase this percentage.</li>
+</ul>
+
+<h3 id="the-solution">The Solution</h3>
+
+<p>In restarting the project, USCIS leadership changed the way they did business.</p>
+
+<p>The team embraced an agile, iterative style of product development that allowed the agency to design, build and deploy functionality more quickly to respond to user needs. While the previous project had taken years before an initial launch, the new approach led to a beta release just one year after development began. Agency staff are now heavily involved in the day-to-day development effort, running stand-up meetings and increasing visibility across the team. Seasoned USDS product managers, engineers and designers partnered with the USCIS team to integrate these modern digital service practices.</p>
+
+<p>In order for the team to effectively support this agile development style, USCIS had to change its approach to contracting. They engaged with multiple vendors instead of using one large contract with a single vendor. The teams worked together to deliver features, build and maintain the infrastructure for the service, and enable the continuous integration of new improvements into the production system. The contracts are designed to support frequent prototyping, refining of product requirements, and delivery of working software. Most of them give USCIS the flexibility to ramp up or down the number of development teams from each vendor based on that vendor’s performance.</p>
+
+<p>USCIS also conducted deep research on their customers that led them to re-imagine the end-to-end immigrant experience well beyond the core actions of filing and processing requests. They began to redesign the immigrant experience around people, not form numbers.</p>
+
+<p>In partnership with 18F and private contractors, USCIS brought this vision to life by launching  <a href="https://my.uscis.gov/">myUSCIS</a>, a new service built to help applicants and their representatives. myUSCIS allows visitors to determine which immigration options are available to them, with a search-driven, plain-language knowledge base of direct answers to common immigration questions. It also now allows immigrants to apply for naturalization, make fee payments, provide supporting evidence, and look up their case status online.</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1237498/18360797/7802de80-75cd-11e6-9511-5f295b346985.png" alt="Digitization of the eligibility worksheet" /></p>
+
+<p>Finally, USCIS technical leaders also made important changes to the architecture of ELIS. The development team has adopted many modern software development practices drawn from the private sector, including the use of open source software components, flexible deployment environments, and real-time monitoring. The team also continuously integrates changes to the system, using modern deployment and testing processes and tools. USCIS is implementing the “DevOps” model, in which there is no separation between development and operations teams.</p>
+
+<p>These improvements in software development practices, design and system architecture are making it easier for users to interact with our immigration system. The team has hit several important milestones, including the release of online filing and adjudication of the Form I-90 (application to replace permanent resident card). USCIS has also begun to electronically process applications for naturalization. USCIS will continue to bring more parts of the immigration process into the new digital system and improve its processes around design, high-quality delivery, and system monitoring and response.</p>
+
+<p>USDS will remain involved with the project to assist with delivery, design and operations.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Success Criteria</strong></th>
+      <th><strong>Status</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Increased percentage of immigration applications processed electronically</td>
+      <td>In progress. 25% of immigration applications are now processed electronically</td>
+    </tr>
+    <tr>
+      <td>Increased customer satisfaction rating over time</td>
+      <td>In progress. 92% of online I-90 filers (renewing or replacing their green cards) reported being satisfied with the experience.</td>
+    </tr>
+    <tr>
+      <td>Increase frequency of ELIS releases</td>
+      <td>Complete. ELIS releases new code weekly, up from previous quarterly releases</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="milestones">Milestones</h3>
+
+<ul>
+  <li>July 2014: A “pilot” USDS engagement prior to its official launch in August began with a “Discovery Sprint” focused on ELIS</li>
+  <li>November 2014: ELIS2 I-90 Three-Day “Soft” Launch</li>
+  <li>March 2015: ELIS2 I-90 Full Launch</li>
+  <li>August 2015: Immigrant Fee payment launched</li>
+  <li>April 2016: ELIS2 Naturalization Pre-processing Go-live Date</li>
+</ul>
+
+<h3 id="the-process-and-lessons-learned">The Process and Lessons Learned</h3>
+
+<ol>
+  <li>
+    <p><strong>Understand what people need.</strong>  The USDS team helped USCIS implement a user-centered design process to ensure that the delivery team understood what people need the service to offer. USDS coordinated and led visits to field offices and the National Benefit Center to conduct direct observation of application processing, giving insight into users’ needs and experiences. This user research informed the design of the system. The team further refined these designs by getting adjudicator feedback on simple mockups of functionality, and testing early versions of the system with adjudicators.</p>
+  </li>
+  <li>
+    <p><strong>Build services using agile and iterative practices.</strong> In the new system, USCIS chose two high-volume services and focused on rapidly digitizing them using an agile development process. The Form I-90 application to replace a permanent resident card was first launched in November 2014, and USCIS Immigrant Fee Payment launched in August 2015. These services were rolled out in an incremental manner, and teams continue to deliver bug fixes and enhancements on a weekly basis. The teams collect feedback from end users and engage in regular usability testing to identify opportunities to improve efficiency and inform development of future product lines.</p>
+  </li>
+  <li>
+    <p><strong>Structure budgets and contracts to support delivery.</strong> The USCIS CIO spearheaded an innovative contracting approach, which replaced a single large vendor with multiple contractors working together and competing for business. Each contractor provides cross-functional development teams that participate in the iterative product development process, working with federal product owners and project managers. Each vendor is evaluated based on its ability to rapidly deliver working software.</p>
+  </li>
+  <li>
+    <p><strong>Deploy services in a flexible hosting infrastructure.</strong> USCIS chose to use a “public cloud” infrastructure service provider to host the service. This choice makes it easy and cost-effective for the team to provision, configure and adjust virtual computing resources as needed.</p>
+  </li>
+  <li>
+    <p><strong>Identify and empower product owners.</strong> USCIS centralized the product development effort in its Office of Transformation Coordination, led by a single executive. This executive has identified product owners for each business line, who are each empowered and responsible for the digitization of that business line’s product. Each product owner can prioritize work, advocate for users, and accept delivery of features from the contractor staff. USDS provided training and support to these product owners, and advocated for the creation of this product management structure.</p>
+  </li>
+  <li>
+    <p><strong>Implement robust monitoring and incident response.</strong> USDS led an initiative to create a rapid response procedure for troubleshooting major incidents such as service outages. This procedure involves identifying “incident commanders” who are empowered to make quick decisions and the use of an alerting tool (currently PagerDuty) to coordinate incident response.</p>
+  </li>
+  <li>
+    <p><strong>Use “soft launches” to help identify issues prior to full release.</strong> The USCIS team has incremental releases built into its process. For example, the ELIS2 external interface was opened to accept I-90 applications for 72 hours in November 2014. The applications received in this “soft launch” window were then processed using the new system, allowing USCIS to complete an end-to-end test of the service with real data. The results of this test were used to refine the service prior to its full launch in February 2015.</p>
+  </li>
+  <li>
+    <p><strong>Rely on automated tests to increase development speed.</strong> Good automated test coverage allows the team to verifiably demonstrate the system is working as intended, and speeds the development process by providing instant and reliable feedback to developers about how changes they have made to the system have impacted existing functionality. Working together, USDS engineers and contractor teams have increased the use of automated unit and integration tests.</p>
+  </li>
+</ol>
+
+
+      
+    </div>
+
+    <div class="tablet:grid-col-4 desktop:grid-col-3 margin-bottom-3 site-c-report-to-congress side-nav">
+      <ul>
+      
+      
+        <li class="">
+          <a href="/report-to-congress/2016/">Letter from the Administrator</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2016/projects/">High Priority Projects</a>
+        </li>
+      
+        <li class=" sub">
+          <a href="/report-to-congress/2016/healthcare-dot-gov/">HealthCare.gov</a>
+        </li>
+      
+        <li class=" active sub">
+          <a href="/report-to-congress/2016/immigration-system/">Immigration System</a>
+        </li>
+      
+        <li class=" sub">
+          <a href="/report-to-congress/2016/veterans-disability-claims/">VA Disability Claims</a>
+        </li>
+      
+        <li class=" sub">
+          <a href="/report-to-congress/2016/vets-dot-gov/">Vets.gov</a>
+        </li>
+      
+        <li class=" sub">
+          <a href="/report-to-congress/2016/irs-secure-access/">IRS Secure Access</a>
+        </li>
+      
+        <li class=" sub">
+          <a href="/report-to-congress/2016/visa-processing/">Visa Processing</a>
+        </li>
+      
+        <li class=" sub">
+          <a href="/report-to-congress/2016/medicare-payments/">Medicare Payments</a>
+        </li>
+      
+        <li class=" sub">
+          <a href="/report-to-congress/2016/refugee-admissions/">Refugee Admissions</a>
+        </li>
+      
+        <li class=" sub">
+          <a href="/report-to-congress/2016/college-scorecard/">College Scorecard</a>
+        </li>
+      
+        <li class=" sub">
+          <a href="/report-to-congress/2016/defense-travel/">Defense Travel</a>
+        </li>
+      
+        <li class=" sub">
+          <a href="/report-to-congress/2016/hack-the-pentagon/">Hack the Pentagon</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2016/procurement/">Procurement</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2016/hiring-talent/">Hiring Top Talent</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2016/shared-services/">Shared Services</a>
+        </li>
+      
+        <li class="pdf"><a href="/resources/USDS-2016-Report-to-Congress.pdf">Download the<br/>full report (PDF)</a></li>
+      </ul>
+
+      <h4>Reports to Congress</h4>
+      <ul>
+        
+        
+        <li>
+          <a href="/report-to-congress/2017/fall/">Fall 2017</a>
+        </li>
+        
+        <li>
+          <a href="/report-to-congress/2017/07/">July 2017</a>
+        </li>
+        
+        <li>
+          <a href="/report-to-congress/2016/">December 2016</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+  </main>
+
+  
+
+<div>
+<ul id="instagram-feed" class="site-c-instagallery"></ul>
+</div>
+
+<section class="site-c-billboard">
+  <div class="grid-container">
+    <p>We need you.</p>
+    <p>Let’s help millions of people together.</p>
+    <p><a class="usa-button usa-button--outline usa-button--inverse" href="/apply">Apply now</a></p>
+  </div>
+</section>
+
+
+<footer class="site-c-footer">
+  <div class="grid-container">
+    <div class="grid-row flex-justify">
+      <div class="grid-col-12 desktop:grid-col margin-bottom-7">
+        <img class="site-c-footer__logo" src="/assets/img/usds-logo-footer.svg" alt="USDS Logo">
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">About USDS</h2>
+        <ul class="site-c-footer__list tablet:padding-right-3">
+          <li><a href="/contact-us">Contact us</a></li>
+          <li><a href="/assets/files/usds-di.pdf" target="_blank">Diversity &amp; Inclusion Report</a></li>
+          <li><a href="/resources/USDS-Impact-Report-2020.pdf" target="_blank">Impact Report</a></li>
+          <li><a href="/assets/files/USDS-Overview.pdf" target="_blank">Press sheet</a></li>
+          <li><a href="/faq">Hiring FAQ</a></li>
+        </ul>
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">Resources</h2>
+        <ul class="site-c-footer__list tablet:padding-right-3">
+          <li><a href="https://playbook.cio.gov/" target="_blank">Digital Services Playbook</a></li>
+          <li><a href="https://sprint.usds.gov/" target="_blank">Discovery Sprint Guide</a></li>
+          <li><a href="https://techfarhub.cio.gov/" target="_blank">TechFAR Hub</a></li>
+          <li><a href="https://designsystem.digital.gov/" target="_blank">U.S. Web Design System</a></li>
+        </ul>
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">Follow us</h2>
+        <ul class="site-c-social-buttons site-c-social-buttons--mini ">
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.instagram.com/usdigitalservice" class="site-c-social-buttons__link site-c-social-buttons__link--instagram" title="Instagram" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#instagram"></use>
+      </svg>
+      <span class="usa-sr-only">Instagram</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://twitter.com/USDS" class="site-c-social-buttons__link site-c-social-buttons__link--twitter" title="Twitter" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#twitter"></use>
+      </svg>
+      <span class="usa-sr-only">Twitter</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.facebook.com/unitedstatesdigitalservice" class="site-c-social-buttons__link site-c-social-buttons__link--facebook" title="Facebook" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#facebook-f"></use>
+      </svg>
+      <span class="usa-sr-only">Facebook</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://medium.com/@USDigitalService" class="site-c-social-buttons__link site-c-social-buttons__link--medium" title="Medium" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#medium-m"></use>
+      </svg>
+      <span class="usa-sr-only">Medium</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.linkedin.com/company/united-states-digital-service" class="site-c-social-buttons__link site-c-social-buttons__link--linkedin" title="Linked in" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#linkedin-in"></use>
+      </svg>
+      <span class="usa-sr-only">Linked in</span>
+    </a>
+  </li>
+  
+</ul>
+      </div>
+    </div>
+    <div class="site-c-footer__site-info">
+      <a href="mailto:USDSpress@omb.eop.gov">USDSpress@omb.eop.gov</a> | <a href="/privacy">Privacy policy</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+
+  <script src="/assets/js/application.js"></script>
+  <script src="/assets/js/vendor/uswds.min.js"></script>
+  <script src="/assets/js/shims/svg4everybody.js"></script>
+  <script>svg4everybody();</script>
+
+</body>
+
+</html>

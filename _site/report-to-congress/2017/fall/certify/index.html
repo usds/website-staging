@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMyydhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsyhsyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMhhNMNdhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdshNMmsyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhshNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhydNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhydNNdyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmNNmhhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyydNNdyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyymMNhyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmyymMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMNhhmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyymMmhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMNdhmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyhNMmyydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMNhyhNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMNhydNNmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhhmMNdhdNMMMMMMMMMMMMMMMMmhydNNdyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmNNmhdNMMMMMMMMMMMMmhydNNdyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMmyymMNhyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMNmyymMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMmhhmmyhmMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhdNMNhyhNNhydMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdyhNMNdyydMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm+.dmhhmMNdysyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMo-  -Mdyhhhmh+yddNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd/   .shNMMd/ommhommMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNddmmh- -mMMMMMMNdmh/:-hMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhysoooosdmNNmhdNMMMMMMMMMMMMhy-/o+ssoooosyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho//////:/.-ymds::NMMMMMMMMMMMMMMMh+o+o+/+//////+sdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNy+///////+yo.:`:/:hMMMMMMMMMMMMMMMMMMdy+o+o+yo///////omMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNo///////+h+-+s/-mNMMMMMMMMMMMMMMMMMMMMMMs++yddyo///////+hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN+/////////-/so//oMMMMMMMMMMMMMMMMMMMMMMMMd//osyhy/////////hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy///////////+///+NMMMMMMMMMMMMMMMMMMMMMMMMMy////++/////////+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+//////////////sNMMMMMMMMMMMMMMMMMMMMMMMMMMMh+//////////////dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+////////////odMMMMMMMMMMddMMMMMMNhNMMMMMMMMMmy+////////////dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy///////+oshmMMMMMMMMmmmh..dmmmmmo.+mmmNMMMMMMMNdyo+///////+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs////oshmMMMMMMMMMMM+/////////////////yMMMMMMMMMMNdyo+///+mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh+/////+smNNNNNNNNN//////.`````-/////yNNNNNNNNNho+/////smMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho+////osssssssso///////-..-://////+sssssssso+////+smMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmdhhdyoooshyso+//////////////////+oosdsoooodhhdmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNsoohNNyoo///sddds///dddd///+oomNNsoodMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyosssooo///yMMMy///NMMN///+oosssoodMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsooooo///yMMMy///NMMN///+oooooymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdsooo///yMMMy///NMMN///+oooymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhoo+//yMMMy///NMMN///+osdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdo//smmo/yMMMy///NMMN/+yNh+/+yNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs//odMMMNyyMMMy///NMMN+dMMMNy+/+dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh//hMMMMmssdmNMy///NMmmhshMMMMNo/+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs/oMMMMM++NMMmmy///mmNMMh/hMMMMd//NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNomMMMMMyyMMMMMdo+yNMMMMNomMMMMMshMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+Meet Mollie the crab, our unofficial mascot :)
+-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+
+
+
+    <title>Modernizing Small Business Certification Programs | United States Digital Service</title>
+
+    
+
+    <meta name="description" content="The Challenge The Small Business Administration (SBA) aids, counsels, assists, and protects the interests of small businesses. SBA’s contracting programs support more than 537,000 jobs and provide a gateway for..." />
+    <link rel="canonical" href="https://usds.gov/report-to-congress/2017/fall/certify/" />
+    <meta property="og:title" content="Modernizing Small Business Certification Programs | United States Digital Service" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="The Challenge The Small Business Administration (SBA) aids, counsels, assists, and protects the interests of small businesses. SBA’s contracting programs support more than 537,000 jobs and provide a gateway for..." />
+    <meta property="og:url" content="https://usds.gov/report-to-congress/2017/fall/certify/" />
+    <meta property="og:site_name" content="United States Digital Service" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://usds.gov/assets/img/social-card--default.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@usds" />
+    <meta name="twitter:image" content="https://usds.gov/assets/img/social-card--default.png">
+    <script type="application/ld+json">
+    {"description":"The Challenge The Small Business Administration (SBA) aids, counsels, assists, and protects the interests of small businesses. SBA’s contracting programs support more than 537,000 jobs and provide a gateway for...","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/img/usds-logo-onwhite.png"}},"headline":"Modernizing Small Business Certification Programs | United States Digital Service","dateModified":"2023-02-02 13:13:29 -0500","datePublished":"2023-02-02 13:13:29 -0500","mainEntityOfPage":{"@type":"WebPage","@id":"https://usds.gov/report-to-congress/2017/fall/certify/"},"@context":"http://schema.org"}</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" media="all" href="/assets/stylesheets/styles.css"></link>
+    <link rel="alternate" type="application/rss+xml" title="United States Digital Service" href="/feed.xml">
+
+    
+
+    <script type="application/javascript" src="/assets/js/vendor/uswds-init.min.js"></script>
+
+    
+      <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
+      <script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=EOP&amp;sub-agency=USDS" id="_fed_an_ua_tag"></script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132706295-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-132706295-1', { 'anonymize_ip': true });
+      </script>
+    
+
+</head>
+
+
+<body>
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  <div class="usa-banner padding-bottom-2 tablet:padding-bottom-0">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner maxw-none">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-dot-gov.svg" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>The .gov means it’s official.</strong>
+              <br>
+              Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-https.svg" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>The site is secure.</strong>
+              <br>
+              The <strong>https://</strong> ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<header class="usa-header site-c-header" role="banner">
+  <div class="usa-navbar site-c-navbar">
+    <a href="/" title="USDS Home" class="site-c-navbar__logo-link">
+      <img class="site-c-navbar__logo" src="/assets/img/usds-logo-horizontal.png" alt="USDS Logo">
+    </a>
+    <a href="/apply" class="usa-button site-c-navbar__join">Apply</a>
+    <button class="usa-menu-btn site-c-navbar__button" aria-label="Menu">
+      <svg aria-hidden="true">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#bars"></use>
+      </svg>
+    </button>
+  </div>
+
+  <nav role="navigation" class="usa-nav site-c-nav">
+      <button class="usa-nav__close">
+        <img src="/assets/img/close.svg" alt="close">
+      </button>
+
+      <ul class="site-c-nav__primary-nav">
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/mission">Our mission</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/how-we-work">How we work</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/projects">Projects</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/news-and-blog">News &amp; blog</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--mobile">
+          <a class="site-c-nav__primary-nav__link" href="/apply">Apply now</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--non-mobile">
+          <a href="/apply" class="usa-button">Apply now</a>
+        </li>
+      </ul>
+
+  </nav>
+</header>
+<div class="usa-overlay"></div>
+
+
+  
+
+  <main id="main-content" role="main" class="margin-bottom-9">
+
+    
+      <style>
+.site-c-flag a:visited,
+.site-c-report-to-congress ul a:visited {
+  color: #005ea2;
+}
+.site-c-report-to-congress ul,
+.site-c-report-to-congress ol {
+  max-width: 66ch;
+}
+.site-c-report-to-congress.side-nav ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+.site-c-report-to-congress.side-nav li {
+  margin: 1rem 0;
+}
+.site-c-report-to-congress.side-nav li.sub {
+  margin-left: 2rem;
+}
+.site-c-report-to-congress.side-nav li.active {
+  font-weight: bold;
+}
+.site-c-report-to-congress.side-nav li.pdf {
+  margin: 3rem 0;
+}
+</style>
+
+<div class="grid-container">
+  <header class="padding-y-5">
+
+    <span class="site-c-flag">
+      
+        
+        <a href="/report-to-congress/2017/fall/">Fall 2017 Report to Congress</a>
+        &bull;
+      
+       Small Business Administration (SBA)</span>
+    <h1>Modernizing Small Business Certification Programs</h1>
+  </header>
+  <hr>
+
+  <div class="grid-row tablet:flex-row padding-top-3">
+    <div class="tablet:grid-col-8 desktop:grid-col-9 margin-bottom-9 tablet:padding-right-4 site-c-report-to-congress">
+      <h3 id="the-challenge">The Challenge</h3>
+
+<p>The Small Business Administration (SBA) aids, counsels, assists, and protects the interests of small businesses. SBA’s contracting programs support more than 537,000 jobs and provide a gateway for small businesses to compete for up to $100 billion in government set-aside contracts annually. The process of certifying a small business owner, however, was in need of technological modernization. In fact, the process created an unnecessary burden on small businesses and limited the Government’s ability to review applications in a timely and efficient manner. In short, a paper- and mail- driven process needed to be replaced by an online platform, and SBA analysts needed a modern solution to support the review of a large volume of application paperwork.</p>
+
+<h3 id="the-solution">The Solution</h3>
+
+<p>USDS began working with SBA in February 2015 to develop online solutions that would streamline and simplify certifying small businesses. The modernization effort, known as <a href="https://certify.sba.gov">Certify.SBA.gov</a>, replaces current legacy systems, eliminates paper- and mail-based applications, and creates a more efficient process to determine small business eligibility. The new system will enhance search and reporting capabilities and allow other Federal agencies to find small businesses for government contracts. Additionally, USDS has worked with SBA to modernize the Historically Underutilized Business Zones Map (HUBZone), which helps small businesses in rural and urban communities determine if they are eligible for participation in the HUBZone program.</p>
+
+<h3 id="update">Update</h3>
+
+<p>The 8(a) Business and Development Program assists firms with at least 51% ownership and control by socially and economically disadvantaged individuals. USDS, in partnership with SBA, is working toward the launch of the online application process for 8(a) businesses through <a href="https://certify.sba.gov">Certify.SBA.gov</a> in early 2018. This new online application will join the Women-Owned Small Business (WOSB) and All Small Mentor Protégé programs already available on <a href="https://certify.sba.gov">Certify.SBA.gov</a>. With this new 8(a) launch, small businesses will now be able to:</p>
+
+<ul>
+  <li>Determine eligibility for SBA’s multiple contracting programs</li>
+  <li>Complete SBA forms directly online</li>
+  <li>Upload and manage documents across multiple programs</li>
+  <li>Receive email notifications, such as expiration and renewal notices</li>
+  <li>Check case status online rather than calling or visiting an SBA field office</li>
+</ul>
+
+<p>USDS and SBA are working to enhance this application, replacing paper questionnaires with online forms and integrating a secure messaging platform to protect personally identifiable information from the risks of transferring data via email. USDS is adding functionality for small businesses to upload documents and reuse them across multiple certifications rather than submitting the same document multiple times. Finally, an internal notes section will allow analysts to append notes and information inside the online case file, providing continuity during staff turnover and empowering SBA analysts to refer a case to a colleague without having to physically transfer paperwork. These tools increase efficiency and security.</p>
+
+<p>The <a href="https://certify.sba.gov">Certify.SBA.gov</a> platform will soon incorporate the HUBZone application and 8(a) annual review. These projects will support advanced data analysis to inform meaningful outreach and program evaluation.</p>
+
+<h4 id="sba-hubzone">SBA HUBZONE</h4>
+
+<p>The new version of the Historically Underutilized Business Zones (HUBZone) map was launched in June 2017. The HUBZone map features the latest regulatory changes, provides an enhanced address search, an accessible user experience, and uses modern open source and geospatial technologies. Map updates now take weeks rather than months. A new advanced street view in the HUBZone map provides additional detailed information to SBA analysts in advance of site visits, allowing them to check whether a site visit is necessary and if so, when and how best to conduct them. With the recent addition of Qualified Disaster Areas to the map, businesses in newly designated areas can now better understand the length of time an area might remain as a HUBZone.</p>
+
+<h3 id="impact">Impact</h3>
+
+<div class="margin-bottom-3">
+	<div>
+		<span class="text-primary text-bold font-body-3xl">4 &rarr; 1</span>
+    </div>
+    <div>Systems consolidated</div>
+</div>
+
+<div class="margin-bottom-3">
+	<div>
+		<span class="text-primary text-bold font-body-3xl">230</span><span class="text-primary text-bold font-body-2xl">K</span><span class="text-primary text-bold font-body-3xl">+</span>
+    </div>
+    <div>Documents submitted electronically</div>
+</div>
+
+<div class="margin-bottom-3">
+	<div>
+		<span class="text-primary text-bold font-body-3xl">3x</span>
+    </div>
+    <div>Increase in WOSB participation since&nbsp;launch</div>
+</div>
+
+<div class="margin-bottom-3">
+	<div>
+		<span class="text-primary text-bold font-body-3xl">180</span>
+    </div>
+    <div>Labor years redirected annually</div>
+</div>
+
+
+      
+        
+        
+          <p>This project was previously chronicled in our <a href="/report-to-congress/2017/07/certify/">July 2017 Report to Congress</a>.</p>
+        
+      
+    </div>
+
+    <div class="tablet:grid-col-4 desktop:grid-col-3 margin-bottom-3 site-c-report-to-congress side-nav">
+      <ul>
+      
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/">Letter from the Administrator</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/vets-dot-gov/">Simplifying Veteran-facing Services through Vets.gov</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/veterans-disability-claims/">Streamlining VA Appeals Processing</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/login-dot-gov/">Improving Government Consumer Identity with Login.gov</a>
+        </li>
+      
+        <li class=" active">
+          <a href="/report-to-congress/2017/fall/certify/">Modernizing Small Business Certification Programs</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/immigration-system/">Modernizing Our Immigration System</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/trusted-traveler/">Relaunching Trusted Traveler Programs</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/hack-the-pentagon/">Hacking the Pentagon</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/dps/">Helping Military Families Move</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/medicare-payments/">Implementing Medicare Payment Changes</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/blue-button/">Modernizing Health Data Access with APIs</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/procurement/">Transforming Federal IT Procurement through Digital IT Acquisition Training</a>
+        </li>
+      
+        <li class="">
+          <a href="/report-to-congress/2017/fall/completed/">Completed Projects</a>
+        </li>
+      
+        <li class="pdf"><a href="/resources/USDS-Fall-2017-Report-to-Congress.pdf">Download the<br/>full report (PDF)</a></li>
+      </ul>
+
+      <h4>Reports to Congress</h4>
+      <ul>
+        
+        
+        <li>
+          <a href="/report-to-congress/2017/fall/">Fall 2017</a>
+        </li>
+        
+        <li>
+          <a href="/report-to-congress/2017/07/">July 2017</a>
+        </li>
+        
+        <li>
+          <a href="/report-to-congress/2016/">December 2016</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+
+  </main>
+
+  
+
+<div>
+<ul id="instagram-feed" class="site-c-instagallery"></ul>
+</div>
+
+<section class="site-c-billboard">
+  <div class="grid-container">
+    <p>We need you.</p>
+    <p>Let’s help millions of people together.</p>
+    <p><a class="usa-button usa-button--outline usa-button--inverse" href="/apply">Apply now</a></p>
+  </div>
+</section>
+
+
+<footer class="site-c-footer">
+  <div class="grid-container">
+    <div class="grid-row flex-justify">
+      <div class="grid-col-12 desktop:grid-col margin-bottom-7">
+        <img class="site-c-footer__logo" src="/assets/img/usds-logo-footer.svg" alt="USDS Logo">
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">About USDS</h2>
+        <ul class="site-c-footer__list tablet:padding-right-3">
+          <li><a href="/contact-us">Contact us</a></li>
+          <li><a href="/assets/files/usds-di.pdf" target="_blank">Diversity &amp; Inclusion Report</a></li>
+          <li><a href="/resources/USDS-Impact-Report-2020.pdf" target="_blank">Impact Report</a></li>
+          <li><a href="/assets/files/USDS-Overview.pdf" target="_blank">Press sheet</a></li>
+          <li><a href="/faq">Hiring FAQ</a></li>
+        </ul>
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">Resources</h2>
+        <ul class="site-c-footer__list tablet:padding-right-3">
+          <li><a href="https://playbook.cio.gov/" target="_blank">Digital Services Playbook</a></li>
+          <li><a href="https://sprint.usds.gov/" target="_blank">Discovery Sprint Guide</a></li>
+          <li><a href="https://techfarhub.cio.gov/" target="_blank">TechFAR Hub</a></li>
+          <li><a href="https://designsystem.digital.gov/" target="_blank">U.S. Web Design System</a></li>
+        </ul>
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">Follow us</h2>
+        <ul class="site-c-social-buttons site-c-social-buttons--mini ">
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.instagram.com/usdigitalservice" class="site-c-social-buttons__link site-c-social-buttons__link--instagram" title="Instagram" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#instagram"></use>
+      </svg>
+      <span class="usa-sr-only">Instagram</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://twitter.com/USDS" class="site-c-social-buttons__link site-c-social-buttons__link--twitter" title="Twitter" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#twitter"></use>
+      </svg>
+      <span class="usa-sr-only">Twitter</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.facebook.com/unitedstatesdigitalservice" class="site-c-social-buttons__link site-c-social-buttons__link--facebook" title="Facebook" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#facebook-f"></use>
+      </svg>
+      <span class="usa-sr-only">Facebook</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://medium.com/@USDigitalService" class="site-c-social-buttons__link site-c-social-buttons__link--medium" title="Medium" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#medium-m"></use>
+      </svg>
+      <span class="usa-sr-only">Medium</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.linkedin.com/company/united-states-digital-service" class="site-c-social-buttons__link site-c-social-buttons__link--linkedin" title="Linked in" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#linkedin-in"></use>
+      </svg>
+      <span class="usa-sr-only">Linked in</span>
+    </a>
+  </li>
+  
+</ul>
+      </div>
+    </div>
+    <div class="site-c-footer__site-info">
+      <a href="mailto:USDSpress@omb.eop.gov">USDSpress@omb.eop.gov</a> | <a href="/privacy">Privacy policy</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+
+  <script src="/assets/js/application.js"></script>
+  <script src="/assets/js/vendor/uswds.min.js"></script>
+  <script src="/assets/js/shims/svg4everybody.js"></script>
+  <script>svg4everybody();</script>
+
+</body>
+
+</html>

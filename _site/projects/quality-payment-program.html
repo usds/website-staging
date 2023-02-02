@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMyydhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsyhsyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMhhNMNdhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdshNMmsyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhshNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhydNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhydNNdyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmNNmhhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyydNNdyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyymMNhyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmyymMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMNhhmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyymMmhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMNdhmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyhNMmyydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMNhyhNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMNhydNNmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhhmMNdhdNMMMMMMMMMMMMMMMMmhydNNdyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmNNmhdNMMMMMMMMMMMMmhydNNdyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMmyymMNhyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMNmyymMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMmhhmmyhmMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhdNMNhyhNNhydMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdyhNMNdyydMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm+.dmhhmMNdysyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMo-  -Mdyhhhmh+yddNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd/   .shNMMd/ommhommMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNddmmh- -mMMMMMMNdmh/:-hMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhysoooosdmNNmhdNMMMMMMMMMMMMhy-/o+ssoooosyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho//////:/.-ymds::NMMMMMMMMMMMMMMMh+o+o+/+//////+sdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNy+///////+yo.:`:/:hMMMMMMMMMMMMMMMMMMdy+o+o+yo///////omMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNo///////+h+-+s/-mNMMMMMMMMMMMMMMMMMMMMMMs++yddyo///////+hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN+/////////-/so//oMMMMMMMMMMMMMMMMMMMMMMMMd//osyhy/////////hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy///////////+///+NMMMMMMMMMMMMMMMMMMMMMMMMMy////++/////////+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+//////////////sNMMMMMMMMMMMMMMMMMMMMMMMMMMMh+//////////////dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+////////////odMMMMMMMMMMddMMMMMMNhNMMMMMMMMMmy+////////////dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy///////+oshmMMMMMMMMmmmh..dmmmmmo.+mmmNMMMMMMMNdyo+///////+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs////oshmMMMMMMMMMMM+/////////////////yMMMMMMMMMMNdyo+///+mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh+/////+smNNNNNNNNN//////.`````-/////yNNNNNNNNNho+/////smMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho+////osssssssso///////-..-://////+sssssssso+////+smMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmdhhdyoooshyso+//////////////////+oosdsoooodhhdmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNsoohNNyoo///sddds///dddd///+oomNNsoodMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyosssooo///yMMMy///NMMN///+oosssoodMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsooooo///yMMMy///NMMN///+oooooymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdsooo///yMMMy///NMMN///+oooymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhoo+//yMMMy///NMMN///+osdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdo//smmo/yMMMy///NMMN/+yNh+/+yNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs//odMMMNyyMMMy///NMMN+dMMMNy+/+dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh//hMMMMmssdmNMy///NMmmhshMMMMNo/+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs/oMMMMM++NMMmmy///mmNMMh/hMMMMd//NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNomMMMMMyyMMMMMdo+yNMMMMNomMMMMMshMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+Meet Mollie the crab, our unofficial mascot :)
+-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+
+
+
+    <title>Quality Payment Program | United States Digital Service</title>
+
+    
+
+    <meta name="description" content="The Challenge Clinicians and their staff dedicated hundreds of labor hours towards completing and submitting paper forms documenting value-based care quality metrics. They would then submit these forms by fax,..." />
+    <link rel="canonical" href="https://usds.gov/projects/quality-payment-program" />
+    <meta property="og:title" content="Quality Payment Program | United States Digital Service" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="The Challenge Clinicians and their staff dedicated hundreds of labor hours towards completing and submitting paper forms documenting value-based care quality metrics. They would then submit these forms by fax,..." />
+    <meta property="og:url" content="https://usds.gov/projects/quality-payment-program" />
+    <meta property="og:site_name" content="United States Digital Service" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://usds.gov/images/project-hhs-quality-payment-card.jpg">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@usds" />
+    <meta name="twitter:image" content="https://usds.gov/images/project-hhs-quality-payment-card.jpg">
+    <script type="application/ld+json">
+    {"description":"The Challenge Clinicians and their staff dedicated hundreds of labor hours towards completing and submitting paper forms documenting value-based care quality metrics. They would then submit these forms by fax,...","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/img/usds-logo-onwhite.png"}},"headline":"Quality Payment Program | United States Digital Service","dateModified":"2023-02-02 13:13:29 -0500","datePublished":"2023-02-02 13:13:29 -0500","mainEntityOfPage":{"@type":"WebPage","@id":"https://usds.gov/projects/quality-payment-program"},"@context":"http://schema.org"}</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" media="all" href="/assets/stylesheets/styles.css"></link>
+    <link rel="alternate" type="application/rss+xml" title="United States Digital Service" href="/feed.xml">
+
+    
+
+    <script type="application/javascript" src="/assets/js/vendor/uswds-init.min.js"></script>
+
+    
+      <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
+      <script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=EOP&amp;sub-agency=USDS" id="_fed_an_ua_tag"></script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132706295-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-132706295-1', { 'anonymize_ip': true });
+      </script>
+    
+
+</head>
+
+
+<body>
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  <div class="usa-banner padding-bottom-2 tablet:padding-bottom-0">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner maxw-none">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-dot-gov.svg" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>The .gov means it’s official.</strong>
+              <br>
+              Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-https.svg" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>The site is secure.</strong>
+              <br>
+              The <strong>https://</strong> ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<header class="usa-header site-c-header" role="banner">
+  <div class="usa-navbar site-c-navbar">
+    <a href="/" title="USDS Home" class="site-c-navbar__logo-link">
+      <img class="site-c-navbar__logo" src="/assets/img/usds-logo-horizontal.png" alt="USDS Logo">
+    </a>
+    <a href="/apply" class="usa-button site-c-navbar__join">Apply</a>
+    <button class="usa-menu-btn site-c-navbar__button" aria-label="Menu">
+      <svg aria-hidden="true">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#bars"></use>
+      </svg>
+    </button>
+  </div>
+
+  <nav role="navigation" class="usa-nav site-c-nav">
+      <button class="usa-nav__close">
+        <img src="/assets/img/close.svg" alt="close">
+      </button>
+
+      <ul class="site-c-nav__primary-nav">
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/mission">Our mission</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/how-we-work">How we work</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/projects">Projects</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/news-and-blog">News &amp; blog</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--mobile">
+          <a class="site-c-nav__primary-nav__link" href="/apply">Apply now</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--non-mobile">
+          <a href="/apply" class="usa-button">Apply now</a>
+        </li>
+      </ul>
+
+  </nav>
+</header>
+<div class="usa-overlay"></div>
+
+
+  
+  <div class="site-c-page-banner">
+    
+    <div class="site-c-page-banner__text site-c-page-banner__text--alt padding-0">
+      <div class="grid-container height-full display-flex flex-align-center">
+        <p class="site-c-page-banner__header--alt">
+          
+            <a class="site-c-page-banner__header-link display-flex flex-align-center" href="/projects">
+              <svg aria-hidden="true" class="width-3 height-4 margin-right-2">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#angle-left"></use>
+              </svg>
+              Projects
+            </a>
+          
+        </p>
+      </div>
+    </div>
+    
+    <img src="/assets/img/banner--people-projects-lg.svg" srcset="/assets/img/banner--people-projects-sm.svg 640w,
+          /assets/img/banner--people-projects-lg.svg" alt="">
+  </div>
+  
+
+  <main id="main-content" role="main" class="margin-bottom-9">
+
+    
+      <div class="grid-container">
+  <header class="padding-y-5">
+    <span class="site-c-flag">Health and Human Services</span>
+    <h1>Quality Payment Program</h1>
+  </header>
+  <hr>
+
+  <div class="grid-row tablet:flex-row-reverse padding-top-3">
+    <div class="tablet:grid-col-4 desktop:grid-col-3 margin-bottom-3 site-c-project-content">
+      
+
+      
+      <div >
+        <a class="usa-button usa-button-outline" href="https://qpp.cms.gov" target="_blank">View live project</a>
+      </div>
+      
+    </div>
+    <div class="tablet:grid-col-8 desktop:grid-col-9 margin-bottom-9 tablet:padding-right-4 site-c-project-content usa-prose">
+      <h2 id="the-challenge">The Challenge</h2>
+
+<p>Clinicians and their staff dedicated hundreds of labor hours towards completing and submitting paper forms documenting value-based care quality metrics. They would then submit these forms by fax, which took the Centers for Medicare &amp; Medicaid Services months to return quality feedback and payment for care.</p>
+
+<p><img src="../images/project-hhs-quality-payment-ui.gif" alt="" /></p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p>The Quality Payment Program launched in January 2018 as an API empowering clinicians to easily submit Medicare claims. QPP reduces the burden on clinicians to provide healthcare based on outcomes, and decreases the incentive to provide care based on an outdated, fee-for-service model. The Quality Payment Program API makes it easy for clinicians to submit quality metrics to CMS and for the government to review and return feedback promptly, which leads to greater health outcomes for patients and a more positive experience with value-based care for providers.</p>
+
+<p><img src="../images/project-hhs-quality-payment-page.jpg" alt="" />
+<em>Members of our team who worked on QPP meet to discuss Health and Human Services related projects.</em></p>
+
+<h2 id="press">Press</h2>
+
+<ul>
+  <li><a href="https://healthitanalytics.com/news/us-digital-service-revamps-cms-qpp-user-experience-from-the-inside-out">US Digital Service Revamps CMS, QPP User Experience from the Inside Out</a></li>
+  <li><a href="https://fedtechmagazine.com/article/2018/06/usds-teams-cms-spur-it-modernization">USDS Teams at CMS Spur IT Modernization</a></li>
+  <li><a href="https://federalnewsnetwork.com/ask-the-cio/2018/05/u-s-digital-service-helps-cms-with-novel-approach-to-it-modernization/">U.S. Digital Service helps CMS with novel approach to IT modernization</a></li>
+  <li><a href="https://www.politico.com/newsletters/morning-ehealth/2018/08/02/pdmp-market-gains-new-competitor-304100">Human-centered design meets policy</a></li>
+  <li><a href="https://www.politico.com/newsletters/morning-ehealth/2018/04/27/cms-to-make-medicare-advantage-data-available-to-researchers-190036">USDS hands QPP program back to CMS</a></li>
+</ul>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <section class="site-c-section">
+    <div class="site-c-section-heading">
+      <h2 class="site-c-section-heading__heading">More projects</h2>
+      <div class="site-c-section-heading__links">
+        <a class="usa-button usa-button--outline" href="/projects" class="usa-button usa-button-outline">See all our projects</a>
+      </div>
+    </div>
+    <div class="site-c-section__body">
+      <div class="site-c-cards margin-x-neg-2 site-js-carousel">
+  
+  
+    
+    
+      <div class="padding-x-2">
+        <a class="site-c-card site-c-card--linked" href="/projects/vaccines-dot-gov">
+          <img class="site-c-card__image" src="" data-lazy-src="/images/project-vaccines-card.jpg" alt="Critical code: building COVID-19 vaccine finder tools" />
+          <div class="site-c-card__body">
+          <span class="site-c-flag">Health and Human Services</span>
+          <span class="site-c-card__title">Critical code: building COVID-19 vaccine finder tools</span>
+          <div class="usa-prose margin-top-2">
+            <p>With the American public eager for COVID-19 vaccinations, The White House partnered with the U.S. Digital Service, the Centers for Disease Control & Prevention, the Department of Health & Human Services, and Boston Children’s Hospital to launch a fleet of tools connecting people to life-saving vaccines.</p>
+            <p class="site-c-card__affordance" aria-hidden="true">Learn more</p>
+          </div>
+          </div>
+        </a>
+      </div>
+    
+    
+  
+    
+    
+      <div class="padding-x-2">
+        <a class="site-c-card site-c-card--linked" href="/projects/childcare-tax-credit">
+          <img class="site-c-card__image" src="" data-lazy-src="/images/project-childcare-tax-credit-card.jpg" alt="Optimizing benefits for families" />
+          <div class="site-c-card__body">
+          <span class="site-c-flag">Cross-agency</span>
+          <span class="site-c-card__title">Optimizing benefits for families</span>
+          <div class="usa-prose margin-top-2">
+            <p>Working alongside The Department of Treasury and the White House, we built ChildTaxCredit.gov to educate families about the expanded Earned Income Credit and Child Tax Credit. The USDS team relied on in-depth research to create a site that is accessible, easy-to-read, and provides resources to find free tax services.</p>
+            <p class="site-c-card__affordance" aria-hidden="true">Learn more</p>
+          </div>
+          </div>
+        </a>
+      </div>
+    
+    
+  
+    
+    
+      <div class="padding-x-2">
+        <a class="site-c-card site-c-card--linked" href="/projects/smeqa">
+          <img class="site-c-card__image" src="" data-lazy-src="/images/project-smeqa-card.jpg" alt="Changing how the government hires technical talent" />
+          <div class="site-c-card__body">
+          <span class="site-c-flag">Cross-agency</span>
+          <span class="site-c-card__title">Changing how the government hires technical talent</span>
+          <div class="usa-prose margin-top-2">
+            <p>We helped develop a process that allows HR to leverage subject matter experts to evaluate candidates for specialized roles. The result restores fair and open access for all applicants, shortens the hiring timeline, and ensures applicants are truly qualified.</p>
+            <p class="site-c-card__affordance" aria-hidden="true">Learn more</p>
+          </div>
+          </div>
+        </a>
+      </div>
+    
+    
+  
+    
+    
+      <div class="padding-x-2">
+        <a class="site-c-card site-c-card--linked" href="/projects/medicare-payment-program">
+          <img class="site-c-card__image" src="" data-lazy-src="/images/project-hhs-payment-mod-card.jpg" alt="Modernizing the Medicare Payment System" />
+          <div class="site-c-card__body">
+          <span class="site-c-flag">Health and Human Services</span>
+          <span class="site-c-card__title">Modernizing the Medicare Payment System</span>
+          <div class="usa-prose margin-top-2">
+            <p>Eight million lines of COBOL and 2.5 million lines of assembly running on 15 mainframes. 4.5 percent of the entire American economy is fueled by Medicare payments and 53 million people depend on it for their healthcare.</p>
+            <p class="site-c-card__affordance" aria-hidden="true">Learn more</p>
+          </div>
+          </div>
+        </a>
+      </div>
+    
+    
+  
+    
+    
+      <div class="padding-x-2">
+        <a class="site-c-card site-c-card--linked" href="/projects/discharge-upgrade-tool">
+          <img class="site-c-card__image" src="" data-lazy-src="/images/project-va-discharge-upgrade-card.jpg" alt="Helping Veterans upgrade their Discharge Status" />
+          <div class="site-c-card__body">
+          <span class="site-c-flag">Veterans Affairs</span>
+          <span class="site-c-card__title">Helping Veterans upgrade their Discharge Status</span>
+          <div class="usa-prose margin-top-2">
+            <p>A customized, plain language tool gives Veterans step-by-step guidance for submitting a strong application to upgrade their discharge status.</p>
+            <p class="site-c-card__affordance" aria-hidden="true">Learn more</p>
+          </div>
+          </div>
+        </a>
+      </div>
+    
+    
+  
+    
+    
+      <div class="padding-x-2">
+        <a class="site-c-card site-c-card--linked" href="/projects/blue-button-2">
+          <img class="site-c-card__image" src="" data-lazy-src="/images/project-hhs-bbdpc-card.jpg" alt="Empowering beneficiaries with their own health data" />
+          <div class="site-c-card__body">
+          <span class="site-c-flag">Health and Human Services</span>
+          <span class="site-c-card__title">Empowering beneficiaries with their own health data</span>
+          <div class="usa-prose margin-top-2">
+            <p>Leveraging CMS APIs, providers can view of their patients’ full healthcare history without patient intervention. Providers save valuable time that they can better spend talking to patients and preventing conflicts or gaps in care.</p>
+            <p class="site-c-card__affordance" aria-hidden="true">Learn more</p>
+          </div>
+          </div>
+        </a>
+      </div>
+    
+    
+  
+    
+    
+      <div class="padding-x-2">
+        <a class="site-c-card site-c-card--linked" href="/projects/va-dot-gov">
+          <img class="site-c-card__image" src="" data-lazy-src="/images/project-va-va-dot-gov-card2.jpg" alt="Simplifying Veteran‑facing services through VA.gov" />
+          <div class="site-c-card__body">
+          <span class="site-c-flag">Veterans Affairs</span>
+          <span class="site-c-card__title">Simplifying Veteran‑facing services through VA.gov</span>
+          <div class="usa-prose margin-top-2">
+            <p>Each month, over 10 million people attempt to access the digital tools and content at the Department of Veterans Affairs (VA) and have historically struggled to find what they’re looking for. Digital modernization efforts needed to focus on improving the user experience.</p>
+            <p class="site-c-card__affordance" aria-hidden="true">Learn more</p>
+          </div>
+          </div>
+        </a>
+      </div>
+    
+    
+  
+    
+    
+      <div class="padding-x-2">
+        <a class="site-c-card site-c-card--linked" href="/projects/school-safety">
+          <img class="site-c-card__image" src="" data-lazy-src="/images/project-dhs-school-safety-card.jpg" alt="Helping schools keep students safe" />
+          <div class="site-c-card__body">
+          <span class="site-c-flag">Department of Homeland Security</span>
+          <span class="site-c-card__title">Helping schools keep students safe</span>
+          <div class="usa-prose margin-top-2">
+            <p>A website that empowers emergency managers and K–12 administrators with the information they need to improve school safety.</p>
+            <p class="site-c-card__affordance" aria-hidden="true">Learn more</p>
+          </div>
+          </div>
+        </a>
+      </div>
+    
+    
+  
+    
+  
+</div>
+
+    </div>
+  </section>
+</div>
+
+    
+
+  </main>
+
+  
+
+<div>
+<ul id="instagram-feed" class="site-c-instagallery"></ul>
+</div>
+
+<section class="site-c-billboard">
+  <div class="grid-container">
+    <p>We need you.</p>
+    <p>Let’s help millions of people together.</p>
+    <p><a class="usa-button usa-button--outline usa-button--inverse" href="/apply">Apply now</a></p>
+  </div>
+</section>
+
+
+<footer class="site-c-footer">
+  <div class="grid-container">
+    <div class="grid-row flex-justify">
+      <div class="grid-col-12 desktop:grid-col margin-bottom-7">
+        <img class="site-c-footer__logo" src="/assets/img/usds-logo-footer.svg" alt="USDS Logo">
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">About USDS</h2>
+        <ul class="site-c-footer__list tablet:padding-right-3">
+          <li><a href="/contact-us">Contact us</a></li>
+          <li><a href="/assets/files/usds-di.pdf" target="_blank">Diversity &amp; Inclusion Report</a></li>
+          <li><a href="/resources/USDS-Impact-Report-2020.pdf" target="_blank">Impact Report</a></li>
+          <li><a href="/assets/files/USDS-Overview.pdf" target="_blank">Press sheet</a></li>
+          <li><a href="/faq">Hiring FAQ</a></li>
+        </ul>
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">Resources</h2>
+        <ul class="site-c-footer__list tablet:padding-right-3">
+          <li><a href="https://playbook.cio.gov/" target="_blank">Digital Services Playbook</a></li>
+          <li><a href="https://sprint.usds.gov/" target="_blank">Discovery Sprint Guide</a></li>
+          <li><a href="https://techfarhub.cio.gov/" target="_blank">TechFAR Hub</a></li>
+          <li><a href="https://designsystem.digital.gov/" target="_blank">U.S. Web Design System</a></li>
+        </ul>
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">Follow us</h2>
+        <ul class="site-c-social-buttons site-c-social-buttons--mini ">
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.instagram.com/usdigitalservice" class="site-c-social-buttons__link site-c-social-buttons__link--instagram" title="Instagram" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#instagram"></use>
+      </svg>
+      <span class="usa-sr-only">Instagram</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://twitter.com/USDS" class="site-c-social-buttons__link site-c-social-buttons__link--twitter" title="Twitter" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#twitter"></use>
+      </svg>
+      <span class="usa-sr-only">Twitter</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.facebook.com/unitedstatesdigitalservice" class="site-c-social-buttons__link site-c-social-buttons__link--facebook" title="Facebook" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#facebook-f"></use>
+      </svg>
+      <span class="usa-sr-only">Facebook</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://medium.com/@USDigitalService" class="site-c-social-buttons__link site-c-social-buttons__link--medium" title="Medium" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#medium-m"></use>
+      </svg>
+      <span class="usa-sr-only">Medium</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.linkedin.com/company/united-states-digital-service" class="site-c-social-buttons__link site-c-social-buttons__link--linkedin" title="Linked in" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#linkedin-in"></use>
+      </svg>
+      <span class="usa-sr-only">Linked in</span>
+    </a>
+  </li>
+  
+</ul>
+      </div>
+    </div>
+    <div class="site-c-footer__site-info">
+      <a href="mailto:USDSpress@omb.eop.gov">USDSpress@omb.eop.gov</a> | <a href="/privacy">Privacy policy</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+
+  <script src="/assets/js/application.js"></script>
+  <script src="/assets/js/vendor/uswds.min.js"></script>
+  <script src="/assets/js/shims/svg4everybody.js"></script>
+  <script>svg4everybody();</script>
+
+</body>
+
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMyydhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsyhsyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMhhNMNdhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdshNMmsyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhshNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhydNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhydNNdyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmNNmhhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyydNNdyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyymMNhyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmyymMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMNhhmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyymMmhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMNdhmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdyhNMmyydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMMMMMNhyhNMmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhhmMNdhdNMMMMMMMMMMMMMMMMMMMMNhydNNmyymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhhmMNdhdNMMMMMMMMMMMMMMMMmhydNNdyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhmNNmhdNMMMMMMMMMMMMmhydNNdyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMMMMMMmyymMNhyhNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhdNMmhhmMMMNmyymMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNmhdNMmhhmmyhmMNhydNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhdNMNhyhNNhydMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdyhNMNdyydMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm+.dmhhmMNdysyMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMo-  -Mdyhhhmh+yddNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNd/   .shNMMd/ommhommMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNddmmh- -mMMMMMMNdmh/:-hMNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdhysoooosdmNNmhdNMMMMMMMMMMMMhy-/o+ssoooosyhmMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho//////:/.-ymds::NMMMMMMMMMMMMMMMh+o+o+/+//////+sdMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNy+///////+yo.:`:/:hMMMMMMMMMMMMMMMMMMdy+o+o+yo///////omMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNo///////+h+-+s/-mNMMMMMMMMMMMMMMMMMMMMMMs++yddyo///////+hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN+/////////-/so//oMMMMMMMMMMMMMMMMMMMMMMMMd//osyhy/////////hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy///////////+///+NMMMMMMMMMMMMMMMMMMMMMMMMMy////++/////////+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+//////////////sNMMMMMMMMMMMMMMMMMMMMMMMMMMMh+//////////////dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM+////////////odMMMMMMMMMMddMMMMMMNhNMMMMMMMMMmy+////////////dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMy///////+oshmMMMMMMMMmmmh..dmmmmmo.+mmmNMMMMMMMNdyo+///////+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs////oshmMMMMMMMMMMM+/////////////////yMMMMMMMMMMNdyo+///+mMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh+/////+smNNNNNNNNN//////.`````-/////yNNNNNNNNNho+/////smMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNho+////osssssssso///////-..-://////+sssssssso+////+smMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmdhhdyoooshyso+//////////////////+oosdsoooodhhdmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNsoohNNyoo///sddds///dddd///+oomNNsoodMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyosssooo///yMMMy///NMMN///+oosssoodMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdsooooo///yMMMy///NMMN///+oooooymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdsooo///yMMMy///NMMN///+oooymMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmhoo+//yMMMy///NMMN///+osdNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMdo//smmo/yMMMy///NMMN/+yNh+/+yNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs//odMMMNyyMMMy///NMMN+dMMMNy+/+dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh//hMMMMmssdmNMy///NMmmhshMMMMNo/+NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs/oMMMMM++NMMmmy///mmNMMh/hMMMMd//NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNomMMMMMyyMMMMMdo+yNMMMMNomMMMMMshMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+Meet Mollie the crab, our unofficial mascot :)
+-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+
+
+
+    <title>Privacy policy | United States Digital Service</title>
+
+    
+
+    <meta name="description" content="U.S. Digital Service privacy policy Updated: May 16, 2016 The U.S. Digital Service is committed to protecting individual privacy and securing the personal information made available to us when you..." />
+    <link rel="canonical" href="https://usds.gov/privacy" />
+    <meta property="og:title" content="Privacy policy | United States Digital Service" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="U.S. Digital Service privacy policy Updated: May 16, 2016 The U.S. Digital Service is committed to protecting individual privacy and securing the personal information made available to us when you..." />
+    <meta property="og:url" content="https://usds.gov/privacy" />
+    <meta property="og:site_name" content="United States Digital Service" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://usds.gov/assets/img/social-card--default.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@usds" />
+    <meta name="twitter:image" content="https://usds.gov/assets/img/social-card--default.png">
+    <script type="application/ld+json">
+    {"description":"U.S. Digital Service privacy policy Updated: May 16, 2016 The U.S. Digital Service is committed to protecting individual privacy and securing the personal information made available to us when you...","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/img/usds-logo-onwhite.png"}},"headline":"Privacy policy | United States Digital Service","dateModified":"2023-02-02 13:13:29 -0500","datePublished":"2023-02-02 13:13:29 -0500","mainEntityOfPage":{"@type":"WebPage","@id":"https://usds.gov/privacy"},"@context":"http://schema.org"}</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" media="all" href="/assets/stylesheets/styles.css"></link>
+    <link rel="alternate" type="application/rss+xml" title="United States Digital Service" href="/feed.xml">
+
+    
+
+    <script type="application/javascript" src="/assets/js/vendor/uswds-init.min.js"></script>
+
+    
+      <!-- We participate in the US government's analytics program. See the data at analytics.usa.gov. -->
+      <script async type="text/javascript" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=EOP&amp;sub-agency=USDS" id="_fed_an_ua_tag"></script>
+
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132706295-1"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-132706295-1', { 'anonymize_ip': true });
+      </script>
+    
+
+</head>
+
+
+<body>
+
+  <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+  <div class="usa-banner padding-bottom-2 tablet:padding-bottom-0">
+  <div class="usa-accordion">
+    <header class="usa-banner__header">
+      <div class="usa-banner__inner maxw-none">
+        <div class="grid-col-auto">
+          <img class="usa-banner__header-flag" src="/assets/img/us_flag_small.png" alt="U.S. flag">
+        </div>
+        <div class="grid-col-fill tablet:grid-col-auto">
+          <p class="usa-banner__header-text">An official website of the United States government</p>
+          <p class="usa-banner__header-action" aria-hidden="true">Here’s how you know</p>
+        </div>
+        <button class="usa-accordion__button usa-banner__button"
+          aria-expanded="false" aria-controls="gov-banner">
+          <span class="usa-banner__button-text">Here’s how you know</span>
+        </button>
+      </div>
+    </header>
+    <div class="usa-banner__content usa-accordion__content" id="gov-banner">
+      <div class="grid-row grid-gap-lg">
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-dot-gov.svg" alt="Dot gov">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>The .gov means it’s official.</strong>
+              <br>
+              Federal government websites often end in .gov or .mil. Before sharing sensitive information, make sure you’re on a federal government site.
+            </p>
+          </div>
+        </div>
+        <div class="usa-banner__guidance tablet:grid-col-6">
+          <img class="usa-banner__icon usa-media-block__img" src="/assets/img/icon-https.svg" alt="Https">
+          <div class="usa-media-block__body">
+            <p>
+              <strong>The site is secure.</strong>
+              <br>
+              The <strong>https://</strong> ensures that you are connecting to the official website and that any information you provide is encrypted and transmitted securely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<header class="usa-header site-c-header" role="banner">
+  <div class="usa-navbar site-c-navbar">
+    <a href="/" title="USDS Home" class="site-c-navbar__logo-link">
+      <img class="site-c-navbar__logo" src="/assets/img/usds-logo-horizontal.png" alt="USDS Logo">
+    </a>
+    <a href="/apply" class="usa-button site-c-navbar__join">Apply</a>
+    <button class="usa-menu-btn site-c-navbar__button" aria-label="Menu">
+      <svg aria-hidden="true">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#bars"></use>
+      </svg>
+    </button>
+  </div>
+
+  <nav role="navigation" class="usa-nav site-c-nav">
+      <button class="usa-nav__close">
+        <img src="/assets/img/close.svg" alt="close">
+      </button>
+
+      <ul class="site-c-nav__primary-nav">
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/mission">Our mission</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/how-we-work">How we work</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/projects">Projects</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item">
+          <a class="site-c-nav__primary-nav__link" href="/news-and-blog">News &amp; blog</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--mobile">
+          <a class="site-c-nav__primary-nav__link" href="/apply">Apply now</a>
+        </li>
+        <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--non-mobile">
+          <a href="/apply" class="usa-button">Apply now</a>
+        </li>
+      </ul>
+
+  </nav>
+</header>
+<div class="usa-overlay"></div>
+
+
+  
+
+  <main id="main-content" role="main" class="margin-bottom-9">
+
+    
+      <div class="grid-container">
+
+  <section class="site-c-section">
+    <div class="site-c-section-heading">
+      <h1 class="site-c-section-heading__heading site-c-section-heading__heading--h1">U.S. Digital Service privacy policy</h1>
+    </div>
+  </section>
+
+  <hr />
+
+  <section class="site-c-section">
+    <div class="site-c-section__body usa-prose">
+
+      <p>Updated: May 16, 2016</p>
+
+      <p>The U.S. Digital Service is committed to protecting individual privacy and securing the personal information made available to us when you visit USDS.gov (the U.S. Digital Service Site). This Privacy Policy describes what information is made available to the U.S. Digital Service and how that information is used and shared.</p>
+
+      <h2 id="information-from-visits-to-usdsgov">Information from visits to USDS.gov</h2>
+
+      <p><strong>Automatically Collected.</strong> When you visit USDS.gov, information is automatically received and stored by the web servers hosting USDS.gov, including:</p>
+
+      <ul>
+        <li>The originating <a href="https://www.whitehouse.gov/privacy#ip">Internet Protocol (IP)</a>address;</li>
+        <li>The internet <a href="https://www.whitehouse.gov/privacy#domain">domain name</a>;</li>
+        <li>The date and time of your visit;</li>
+        <li>Information about your computer or mobile set-up (e.g. type and version of web browser, operating system, screen resolution, language, and connection speed);</li>
+        <li>The pages on USDS.gov that you visit, the time spend on each page, and scroll depth (how much of a page you viewed);</li>
+        <li>User events (e.g. a click);</li>
+        <li>The internet address, or URL, of the website that connected you to our site, if you accessed USDS.gov via a link on another page (i.e. “referral traffic”); and</li>
+        <li>The amount of data transmitted from USDS.gov to your computer.</li>
+      </ul>
+
+      <p><strong>Cookies.</strong> The U.S. Digital Service only uses web measurementpersistent and customization technologies, such assession cookies, for analytics purposes. You can get more information about how our analytics provider, Google Analytics, uses cookies that are on our site at <a href="https://www.google.com/policies/privacy/partners/">https://www.google.com/policies/privacy/partners/</a>. You can choose not to accept cookies from any website, including USDS.gov, by changing your browser settings.For more information on cookies generally and opting out, see <a href="https://www.usa.gov/optout-instructions">https://www.usa.gov/optout-instructions</a>. You will still be able to access the information on USDS.gov if you choose to opt-out of accepting cookies from our site.</p>
+
+      <h2 id="information-you-give-us">Information you give us</h2>
+
+      <p><strong>Generally and applications.</strong> You do not have to provide the U.S. Digital Service with any personal information or create a user account to access information on USDS.gov. However, if you choose to submit a job application, we need some personal information from you such as your name and email</p>
+
+      <p><strong>Third-party sites.</strong> The U.S. Digital Service maintains official pages or accounts on third-party websites in order to better engage with the American public (these are generally social media). You can submit or publish information to these sites that the U.S. Digital Service will receive, for example by sending a message, posting a comment, “following,” “friending,” or taking similar actions. This information may contain personal information, such as an individual’s username and other public account information, when such information is available based on your privacy settings and the terms of the site.</p>
+
+      <h2 id="how-information-is-used">How information is used</h2>
+
+      <p><strong>Generally.</strong> If you choose to <a href="https://www.whitehouse.gov/privacy#section-information-we-receive">provide us with information</a>, we may use that information to contact you, consider you for a job, or respond to your message. In order to serve you better, we may analyze multiple sources of data you have provided (for example, to look up whether you previously contacted the U.S. Digital Service about the same topic so that we do not send you a duplicative response). We may also use messages or comments collected through USDS.gov or official third-party pages to inform policy decisions or in public advocacy.</p>
+
+      <p><strong>Aggregated.</strong> We may use data you provide and automatically generated data for statistical analysis to assess, for example, what information is of interest to users, technical design specifications, and system performance. This allows us to make general improvements to our site and program.We will not link automatically collected information about your site visits with your personally identifiable information.</p>
+
+      <h2 id="sharing-of-this-information">Sharing of this information</h2>
+
+      <p><strong>Generally.</strong> <a href="https://www.whitehouse.gov/privacy#section-information-we-receive">Information you choose to share with the U.S. Digital Service</a> (directly and via third-party sites) may be treated as public information. We may, for example, publish compilations of messages or comments collected through official social media pages and provide them to national leaders, members of the press, or other individuals outside of the Federal Government. However, we exercise discretion to limit such disclosures to protect your privacy (for example, we generally do not publish last names of commenters).</p>
+
+      <p><strong>Applications.</strong> Information that you submit as part of a job application will only be shared publicly as part of aggregated statistics and without personally identifiable information, unless we are legally required to disclose (see Additional Government Use) or have your consent.We may share applications with federal employees outside of the U.S. Digital Service who are also interested in hiring tech experts. Sometimes we also send applications that we receive to other agencies; you can opt out of this type of sharing when submitting your application.</p>
+
+      <p><strong>Internally.</strong> Within the U.S. Digital Service, we restrict access to non-public personally identifiable information to employees, contractors, and vendors who require access to this information in order to perform their official duties and exercise controls to limit what data they can view based on the specific needs of their position. Access to official U.S. Digital Service accounts on third-party sites is limited to the individuals who administer those accounts.</p>
+
+      <p><strong>Additional government use.</strong> In some cases, we may share information you have provided or automatically generated information with other government agencies in response to lawful law enforcement requests or to protect USDS.gov from security threats. Additionally, if you seek assistance on a matter within the jurisdiction of a federal agency, we may share your information with that agency for the limited purpose of addressing your request for assistance.</p>
+
+      <p><strong>Analytics.</strong> The U.S. Digital Service uses a third-party analytics provider (currently Google Analytics) to analyze data from cookies. The third-party analytics provider does not receive personally identifiable information through these cookies. We have also limited the provider’s ability to see your full IP address (a process known as “IP masking”). You can get more information about how Google Analytics uses cookies that are on our site at <a href="https://www.google.com/policies/privacy/partners/">https://www.google.com/policies/privacy/partners/</a>, or review Google Analytics privacy policy (<a href="https://www.google.com/intl/en/policies/privacy/">https://www.google.com/intl/en/policies/privacy/</a>) for additional information.</p>
+
+      <p><strong>Other sharing.</strong> We do not use or share your information for commercial purposes.</p>
+
+      <h2 id="third-party-sites">Third-party sites</h2>
+
+      <p><strong>Third-party policies.</strong> Your activity on those sites is governed by the website’s security and privacy policies. Users of third-party sites often share information with the general public, user community, and/or the third-party operating the site. Consequently, you should review the privacy policies of third-party sites before using them and ensure that you understand how your information may be shared and used. You should also adjust privacy settings on your account on any third-party site to match your preferences. All official U.S. Digital Service accounts are clearly labeled and are currently managed as part of the Executive Office of the President’s third-party pages. For a complete list of third party pages of the Executive Office of the President, as well as the privacy impact assessment of third-party sites, please see <a href="https://www.whitehouse.gov/privacy/current-third-party-pages">https://www.whitehouse.gov/privacy/current-third-party-pages</a>.</p>
+
+      <p><strong>Analytics.</strong> For aggregate statistical analysis and to improve the quality of our services, we may integrate web measurement tools with our social media pages. These tools enable basic analysis of social media traffic (such as the number of people visiting a certain page).</p>
+
+      <p><strong>Links to external sites.</strong> USDS.gov and other U.S. Digital Service platforms and pages may link to websites created and maintained by other public or private organizations and individuals. When you follow a link to an external site, you are leaving USDS.gov and are subject to the external site’s privacy and security policies. We do not control or guarantee the accuracy, relevance, timeliness, or completeness of information contained on an external site. We also do not endorse the site’s sponsor, any views they express, or any products or services they offer.</p>
+
+      <h2 id="data-retention">Data retention</h2>
+
+      <p>Under the Federal Records Act and the Presidential Records Act, the U.S. Digital Service and the Executive Office of the President are required to retain some information that users submit or publish when engaging with the U.S. Digital Service directly or through official U.S. Digital Service pages or accounts on third-party websites, for eventual transfer to the National Archives and Records Administration (NARA). NARA may eventually release this material to the public.For example, on Twitter, the U.S. Digital Service automatically archives “tweets” from official U.S. Digital Service accounts, “direct messages” sent to or from official U.S. Digital Service accounts, and “mentions” (tweets from other users to official U.S. Digital Service accounts; these tweets contain an @ and the username of an official U.S. Digital Service account (e.g., <a href="https://twitter.com/USDS">@USDS</a>).</p>
+
+      <h2 id="children-and-privacy">Children and privacy</h2>
+
+      <p>We believe in the importance of protecting the privacy of children online. The Children’s Online Privacy Protection Act governs information gathered online from or about children under the age of 13. Verifiable consent from a child’s parent or guardian is required before collecting, using, or disclosing personal information from a child under age 13. Our site is not intended to solicit information of any kind from children under age 13.</p>
+
+      <h2 id="security">Security</h2>
+
+      <p>We take reasonable precautions to protect our site and information collected by the U.S. Digital Service. We utilize common practices and technical controls to protect the information in our possession or control, along with USDS.gov itself. These practices and controls include, but are not limited to: encrypting the transfer of personal information over the internet via Transport Layer Security (TLS), using high-strength firewalls and intrusion detection systems (IDS) to safeguard personal information, and maintaining strict technical controls and procedures to ensure the integrity of all data on USDS.gov. We periodically review our processes and systems to verify compliance with industry best practices and to ensure the highest level of security for our website.</p>
+
+      <h2 id="us-digital-service-intellectual-property">U.S. Digital Service intellectual property</h2>
+
+      <p><strong>Copyright.</strong> Information created by the U.S. Digital Service is in the public domain and you may reproduce, publish, or otherwise use it without our permission. Please consider appropriate citation to the U.S. Digital Service as the source. However, copyrighted materials created by entities outside of the U.S. Digital Service also may appear on this website, on our third-party site accounts, or may be reached through a link on this website. Copyright and other intellectual property laws may apply to your use of those materials.</p>
+
+      <p><strong>Trademark.</strong> The name United States Digital Service and USDS are registered trademarks. Your use of them must comply with intellectual property laws.</p>
+
+      <h2 id="updates-to-this-privacy-policy">Updates to this privacy policy</h2>
+
+      <p>We will revise or update this policy from time to time. If we make significant changes to how we handle personal information, we will post changes to the policy on our site and change the date at the top. We will provide additional notice in advance (e.g., a disclaimer on our website or an email to subscribers) if material changes are being made.</p>
+
+    </div>
+</section>
+</div>
+
+    
+
+  </main>
+
+  
+
+<div>
+<ul id="instagram-feed" class="site-c-instagallery"></ul>
+</div>
+
+<section class="site-c-billboard">
+  <div class="grid-container">
+    <p>We need you.</p>
+    <p>Let’s help millions of people together.</p>
+    <p><a class="usa-button usa-button--outline usa-button--inverse" href="/apply">Apply now</a></p>
+  </div>
+</section>
+
+
+<footer class="site-c-footer">
+  <div class="grid-container">
+    <div class="grid-row flex-justify">
+      <div class="grid-col-12 desktop:grid-col margin-bottom-7">
+        <img class="site-c-footer__logo" src="/assets/img/usds-logo-footer.svg" alt="USDS Logo">
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">About USDS</h2>
+        <ul class="site-c-footer__list tablet:padding-right-3">
+          <li><a href="/contact-us">Contact us</a></li>
+          <li><a href="/assets/files/usds-di.pdf" target="_blank">Diversity &amp; Inclusion Report</a></li>
+          <li><a href="/resources/USDS-Impact-Report-2020.pdf" target="_blank">Impact Report</a></li>
+          <li><a href="/assets/files/USDS-Overview.pdf" target="_blank">Press sheet</a></li>
+          <li><a href="/faq">Hiring FAQ</a></li>
+        </ul>
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">Resources</h2>
+        <ul class="site-c-footer__list tablet:padding-right-3">
+          <li><a href="https://playbook.cio.gov/" target="_blank">Digital Services Playbook</a></li>
+          <li><a href="https://sprint.usds.gov/" target="_blank">Discovery Sprint Guide</a></li>
+          <li><a href="https://techfarhub.cio.gov/" target="_blank">TechFAR Hub</a></li>
+          <li><a href="https://designsystem.digital.gov/" target="_blank">U.S. Web Design System</a></li>
+        </ul>
+      </div>
+      <div class="grid-col-12 tablet:grid-col-4 desktop:grid-col margin-bottom-7">
+        <h2 class="site-c-footer__heading">Follow us</h2>
+        <ul class="site-c-social-buttons site-c-social-buttons--mini ">
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.instagram.com/usdigitalservice" class="site-c-social-buttons__link site-c-social-buttons__link--instagram" title="Instagram" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#instagram"></use>
+      </svg>
+      <span class="usa-sr-only">Instagram</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://twitter.com/USDS" class="site-c-social-buttons__link site-c-social-buttons__link--twitter" title="Twitter" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#twitter"></use>
+      </svg>
+      <span class="usa-sr-only">Twitter</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.facebook.com/unitedstatesdigitalservice" class="site-c-social-buttons__link site-c-social-buttons__link--facebook" title="Facebook" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#facebook-f"></use>
+      </svg>
+      <span class="usa-sr-only">Facebook</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://medium.com/@USDigitalService" class="site-c-social-buttons__link site-c-social-buttons__link--medium" title="Medium" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#medium-m"></use>
+      </svg>
+      <span class="usa-sr-only">Medium</span>
+    </a>
+  </li>
+  
+  <li class="site-c-social-buttons__item">
+    <a href="https://www.linkedin.com/company/united-states-digital-service" class="site-c-social-buttons__link site-c-social-buttons__link--linkedin" title="Linked in" target="_blank">
+      <svg aria-hidden="true" class="site-c-social-buttons__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/img/fontawesome-sprite.svg#linkedin-in"></use>
+      </svg>
+      <span class="usa-sr-only">Linked in</span>
+    </a>
+  </li>
+  
+</ul>
+      </div>
+    </div>
+    <div class="site-c-footer__site-info">
+      <a href="mailto:USDSpress@omb.eop.gov">USDSpress@omb.eop.gov</a> | <a href="/privacy">Privacy policy</a>
+    </div>
+  </div>
+</footer>
+
+  
+
+
+  <script src="/assets/js/application.js"></script>
+  <script src="/assets/js/vendor/uswds.min.js"></script>
+  <script src="/assets/js/shims/svg4everybody.js"></script>
+  <script>svg4everybody();</script>
+
+</body>
+
+</html>
