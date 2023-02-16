@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # GitHub Action overrides this with repo name when not in usds/website
-baseurl: ""
+baseurl: "/website-staging" 
 
 # This custom var is used only in meta tags in _head.html. It does not break sites for staging, dev, etc.
 domain: "https://usds.gov"
