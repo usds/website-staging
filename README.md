@@ -107,5 +107,8 @@ To update a major version of `uswds`, consult their documentation. The `package.
 * [How to add a new page without HTML](https://github.com/usds/website/wiki/Adding-a-simple-page)
 
 ## Artifacts that shouldn't be on the public `README`
-* [1/2023 website refresh kickoff mural](https://app.mural.co/t/usdigitalservice0135/m/usdigitalservice0135/1673387297851/33a7a5bdf62a705ccc53d03adadcbf72a1c135f9?sender=94e533d3-21f0-4eee-a3ce-6c21aa4110b1)
-* [1/2023 refresh project board with backlog](https://github.com/orgs/usds/projects/77/views/1)
+
+### 1/2023 refresh project
+* [kickoff mural](https://app.mural.co/t/usdigitalservice0135/m/usdigitalservice0135/1673387297851/33a7a5bdf62a705ccc53d03adadcbf72a1c135f9?sender=94e533d3-21f0-4eee-a3ce-6c21aa4110b1)
+* [project board with backlog](https://github.com/orgs/usds/projects/77/views/1)
+* [retro board](https://app.mural.co/t/usdigitalservice0135/m/usdigitalservice0135/1672774407639/cfa0ba36ef019a28c549bd98f3fd02dfcd485b71?sender=41fcc266-a797-4857-bebb-536052499456)
