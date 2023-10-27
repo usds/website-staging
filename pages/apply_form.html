@@ -1,0 +1,100 @@
+---
+layout: default
+title: Apply to USDS
+description: The United States Digital Service is transforming how the federal government works for the American people. And we need you.
+permalink: /apply_form
+banner_file: banner--join-us-lg.svg
+banner_file_mobile: banner--join-us-sm.svg
+social_image: social-card--join-us.png
+hide_apply_button: true
+
+---
+{% assign content = site.data.apply_form %}
+
+<div class="grid-container">
+  <section class="site-c-section">
+    {% if content.page_alert %}
+    <div class="usa-alert usa-alert--info margin-bottom-4">
+      <div class="usa-alert__body">
+        {% if content.page_alert.alert_heading %}
+        <h3 class="usa-alert__heading">{{ content.page_alert.alert_heading }}</h3>
+        {% endif %}
+        <p class="usa-alert__text">{{ content.page_alert.alert_body }}</p>
+      </div>
+    </div>
+    {% endif %}
+    <div class="site-c-section-heading site-c-section-heading">
+      <h1 class="site-c-section-heading__heading site-c-section-heading__heading--h1">{{ content.page_title.heading_title }}</h1>
+      <div class="site-c-section-heading__text usa-prose">
+        {{ content.page_title.heading_text | replace: 'site.baseurl', site.baseurl | markdownify}}
+      </div>
+      <div class="site-c-section-heading__links">
+        <a class="usa-button usa-button--outline" href="{{ site.baseurl }}{% link pages/faq.html %}">{{ content.page_title.heading_button_text }}</a>
+      </div>
+    </div>
+  </section>
+
+  <hr aria-hidden="true">
+  <section class="site-c-section">
+  <iframe id="applicationFrame" class="site-c-apply" src="https://eop-fra.secure.force.com/digitalservice" title="Join USDS form"></iframe>
+  </section>
+
+  <script>
+    // Checks height of Salesforce apply form and applies to iframe
+
+    var ifr = document.getElementById("applicationFrame");
+    var isTestingMode = false;
+
+    function resizeApplicationFrame(height){
+      try{
+        var frameResizedHeight = parseInt(height) + 25;
+        if(isTestingMode){
+          console.log(frameResizedHeight);
+        } else{
+          ifr.style.height = frameResizedHeight + "px";
+        }
+      }
+      catch {
+      }
+    }
+
+    window.addEventListener('message', function (e) {
+      var eventName = e.data[0];
+      var data      = e.data[1];
+
+      switch (eventName) {
+        case 'applicationFormHeight':
+          resizeApplicationFrame(data);
+          break;
+      }
+    }, false);
+
+    window.addEventListener('load', function(_e) {
+      try {
+        // grab the role cgi parameter from page and pass it to the iframe
+        const role = new URL(document.location.href)?.searchParams?.get("role") || "";
+        if (!role?.length) { // has param?
+          return;
+        }
+        const currentFormHref = ifr?.src || "";
+        if (!currentFormHref?.length) {
+          return;
+        }
+
+        const updatedUrl = new URL(currentFormHref);
+        updatedUrl.searchParams.set("role", role);
+        // this will cause to form to reload, but we're using a static site generator
+        ifr.src = updatedUrl.toString();
+      } catch(err) {
+        console.log(err);
+      }
+    }, false);
+  </script>
+
+  <section class="site-c-section">
+    <div class="usa-prose">
+      {{ content.eoe_statement | markdownify }}
+    </div>
+  </section>
+
+</div>

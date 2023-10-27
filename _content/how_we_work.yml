@@ -17,42 +17,6 @@ roles_heading_text: |-
 
    Learn more about who we hire and how we work below. If you don’t find a description that fits you, but think you can help push our mission forward, [we encourage you to apply](../apply).
 
-delivery_roles:
-  - heading: "Engineering"
-    text: |-
-      Engineers will rarely find the opportunity to work on systems that are more mission-critical than those you'll encounter at USDS, where we build, scale, and troubleshoot systems of huge reach. The technology we work on is not bleeding edge, and USDS is not an engineering-first organization; we are most successful advocating for modern software practices when we work alongside product managers, UX designers, and acquisition specialists.
-
-      _Skills you might bring to the engineering community:_ programming, modern architecture, incident response, technical communication, project and team management, or collaborative engineering practices.
-    image: graphic-how-we-work-engineering.svg
-
-  - heading: "Design and user experience"
-    text: |-
-      USDS designers know that people using government services come from an endless range of experiences and contexts, so we design alongside those people to make sure content is easily understood, and experiences are simple, consistent, and useful. We often introduce human-centered design practices to the government.
-
-      _Skills you might bring to the design community:_ design process, systems thinking, leadership, user research, interaction design, service design, design operations, content strategy, visual design, front-end development, or art direction.
-    image: graphic-how-we-work-design.svg
-
-  - heading: "Data science"
-    text: |-
-      USDS data scientists tap into deep reservoirs of unrefined government data in search of the insights that power our teams. We might pinpoint opportunities to fix broken processes, predict the effects of policy change, or identify inequities in government services. We do our best work when we collaborate with qualitative researchers and subject matter experts to build shared understanding.
-
-      _Skills you might bring to the data community:_ statistical analysis, machine learning and AI, data engineering, data visualization and communication, data ethics, or public policy analysis.
-    image: graphic-how-we-work-data-science.svg
-
-  - heading: "Product, strategy, and operations"
-    text: |-
-      Product folks at USDS focus on data to make product decisions based on reality, not politics. We're not necessarily the project leads; we may write tickets and prioritize backlogs, identify strategy, negotiate contracts, or present to high-level stakeholders. We work with our teams to identify the possible paths to success based on user research and technical feasibility, and deliver the best solution, together.
-
-      _Skills you might bring to the product community:_ execution, communication, leadership, user focus, grit, product delivery, product strategy, capacity building, government expertise, or data analysis.
-    image: graphic-how-we-work-product.svg
-  
-  - heading: "Procurement"
-    text: |-
-      USDS acquisition strategists make buying digital services for the government more efficient and effective. Often, agencies don't have the capacity or expertise to build their own digital services, so they partner with technical experts outside the government. From jumping in on short discovery sprints to acquisition strategy across product portfolios, our biggest strengths are in market intelligence, innovating on evaluation methods, and creating contracts that focus on results over requirements.
-      
-      _Skills you might bring to the procurement community:_ digital market knowledge, federal procurement process, strategic advice, or technical acumen.
-    image: graphic-how-we-work-procurement.svg
-
 best_practices:
   heading_title: "Bringing private sector best practices to the Federal Government"
   heading_text: |-
