@@ -4,9 +4,7 @@
     <a href="{{ site.baseurl }}/" title="USDS Home" class="site-c-navbar__logo-link">
       <img class="site-c-navbar__logo" src="{{ site.baseurl }}/assets/img/usds-logo-horizontal.png" alt="USDS Logo">
     </a>
-    {% unless page.hide_apply_button %}
     <a href="{{ site.baseurl }}{% link pages/apply.html %}" class="usa-button site-c-navbar__join" id="applyButton">Apply</a>
-    {% endunless %}
     <button class="usa-menu-btn site-c-navbar__button" aria-label="Menu">
       <svg aria-hidden="true">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ site.baseurl }}/assets/img/fontawesome-sprite.svg#bars"></use>
@@ -35,12 +33,17 @@
         <li class="site-c-nav__primary-nav__item">
           <a class="site-c-nav__primary-nav__link" href="{{ site.baseurl }}{% link pages/news-and-blog.html %}">News &amp; blog</a>
         </li>
+        {% unless page.hide_apply_button %}
         <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--mobile">
           <a class="site-c-nav__primary-nav__link" href="{{ site.baseurl }}{% link pages/apply.html %}">Apply now</a>
         </li>
         <li class="site-c-nav__primary-nav__item site-c-nav__primary-nav__item--non-mobile">
           <a href="{{ site.baseurl }}{% link pages/apply.html %}" class="usa-button">Apply now</a>
         </li>
+        {% else %}
+        <!-- page.hide_apply_button: {{ page.hide_apply_button }} Empty entry preserves | separator -->
+        <li class="site-c-nav__primary-nav__item">&nbsp;</li>
+        {% endunless %}
       </ul>
 
   </nav>
